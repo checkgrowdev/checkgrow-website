@@ -1,9 +1,11 @@
 "use client";
 
-/* A minimal fast-scroll rail pinned to the right edge on phones: one small
-   line per section, the current one in the primary purple. Touch it and the
-   section titles surface beside the lines; drag to scrub the whole page.
-   A plain tap on a line jumps to its section. Desktop never sees it. */
+/* A minimal fast-scroll rail hugging the left edge on phones (flush, no
+   margin, so it steals no space from the conversion CTAs on the right):
+   one small line per section, the current one in the primary purple.
+   Touch it and the section titles surface beside the lines; drag to scrub
+   the whole page. A plain tap on a line jumps to its section. Desktop
+   never sees it. */
 
 import { useEffect, useRef, useState } from "react";
 
@@ -62,7 +64,7 @@ export function MobileScrollRail() {
   return (
     <div
       ref={railRef}
-      className="fixed right-1.5 top-1/2 z-40 flex -translate-y-1/2 touch-none flex-col items-end gap-3 py-2 pl-6 pr-1 lg:hidden"
+      className="fixed left-0 top-1/2 z-40 flex -translate-y-1/2 touch-none flex-col items-start gap-3 py-2 pr-6 lg:hidden"
       onPointerDown={(e) => {
         dragging.current = true;
         moved.current = false;
@@ -96,8 +98,8 @@ export function MobileScrollRail() {
           }}
         >
           <span
-            className={`pointer-events-none absolute right-full mr-2.5 whitespace-nowrap rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-semibold shadow-soft ring-1 ring-cream-3 transition-all duration-200 ${
-              active ? "translate-x-0 opacity-100" : "translate-x-1.5 opacity-0"
+            className={`pointer-events-none absolute left-full ml-2.5 whitespace-nowrap rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-semibold shadow-soft ring-1 ring-cream-3 transition-all duration-200 ${
+              active ? "translate-x-0 opacity-100" : "-translate-x-1.5 opacity-0"
             } ${current === i ? "text-[#6373FF]" : "text-ink-soft"}`}
           >
             {s.label}
