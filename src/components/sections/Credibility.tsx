@@ -4,7 +4,7 @@ const models = [
   { name: "OpenAI", icon: "/brand-icons/openai.svg" },
   { name: "Gemini", icon: "/brand-icons/gemini.svg" },
   { name: "Claude", icon: "/brand-icons/claude.svg" },
-  { name: "Perplexity", icon: null },
+  { name: "Perplexity", icon: "/brand-icons/perplexity.svg" },
 ];
 
 export function Credibility() {

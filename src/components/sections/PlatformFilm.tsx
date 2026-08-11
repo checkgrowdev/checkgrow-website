@@ -177,11 +177,16 @@ export function PlatformFilm() {
         className="pointer-events-none absolute left-1/2 top-1/2 h-[85%] w-[88%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[130px]"
         style={{ backgroundColor: "rgba(164, 146, 225, 0.65)" }}
       />
-      {/* the purple dissolves softly into the next section */}
+      {/* the purple dissolves into the next section along a soft curve:
+          the cream rises highest at the centre and rolls off towards the
+          corners, so the ending reads circular rather than a hard band */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-48 md:h-64"
-        style={{ background: "linear-gradient(to bottom, rgba(247,247,245,0) 0%, rgba(247,247,245,0.55) 55%, #F7F7F5 100%)" }}
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-64 md:h-96"
+        style={{
+          background:
+            "radial-gradient(140% 100% at 50% 100%, #F7F7F5 28%, rgba(247,247,245,0.7) 52%, rgba(247,247,245,0.25) 72%, rgba(247,247,245,0) 92%)",
+        }}
       />
       <div className="wrap relative">
         <div
