@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { appendFile, mkdir } from "fs/promises";
 import path from "path";
+import { isCompanyEmail } from "@/lib/freeEmailDomains";
 
 /* Waitlist intake. Leads forward server-side to the Checkgrow webhook;
    the URL (which embeds its token) lives ONLY in the WAITLIST_WEBHOOK_URL
@@ -62,6 +63,12 @@ export async function POST(req: Request) {
     email.length > 254
   ) {
     return NextResponse.json({ error: "Invalid email" }, { status: 400 });
+  }
+  if (!isCompanyEmail(email)) {
+    return NextResponse.json(
+      { error: "Please add your company email" },
+      { status: 400 },
+    );
   }
   const clean = (v: unknown) =>
     typeof v === "string" ? v.trim().slice(0, 80) : "";

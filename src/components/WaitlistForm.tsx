@@ -14,9 +14,13 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AnimatePresence, motion } from "motion/react";
+import { isCompanyEmail, COMPANY_EMAIL_MESSAGE } from "@/lib/freeEmailDomains";
 
 const schema = z.object({
-  email: z.string().email("Enter a valid work email"),
+  email: z
+    .string()
+    .email("Enter a valid work email")
+    .refine(isCompanyEmail, COMPANY_EMAIL_MESSAGE),
   firstName: z.string().trim().min(1, "Add your first name").max(80),
   lastName: z.string().trim().min(1, "Add your last name").max(80),
 });
@@ -182,16 +186,38 @@ export function WaitlistForm({
               <label htmlFor={`${id}-email`} className="sr-only">
                 Work email
               </label>
-              <input
-                id={`${id}-email`}
-                type="email"
-                inputMode="email"
-                autoComplete="email"
-                placeholder="Work email"
-                aria-invalid={!!errors.email}
-                className={inputCls}
-                {...register("email")}
-              />
+              <div className="relative w-full min-w-0">
+                <AnimatePresence>
+                  {errors.email?.message === COMPANY_EMAIL_MESSAGE && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 6, scale: 0.96 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 6, scale: 0.96 }}
+                      transition={{ duration: 0.22, ease: [0.2, 0, 0, 1] }}
+                      role="alert"
+                      className="absolute bottom-full left-4 z-20 mb-3 whitespace-nowrap rounded-lg px-3.5 py-2 text-sm font-medium text-white shadow-raised"
+                      style={{ backgroundColor: "#6373FF" }}
+                    >
+                      {COMPANY_EMAIL_MESSAGE}
+                      <span
+                        aria-hidden
+                        className="absolute -bottom-1 left-6 size-2.5 rotate-45"
+                        style={{ backgroundColor: "#6373FF" }}
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <input
+                  id={`${id}-email`}
+                  type="email"
+                  inputMode="email"
+                  autoComplete="email"
+                  placeholder="Work email"
+                  aria-invalid={!!errors.email}
+                  className={inputCls}
+                  {...register("email")}
+                />
+              </div>
               <button type="submit" className={buttonCls}>
                 Join the waitlist
               </button>
@@ -241,7 +267,9 @@ export function WaitlistForm({
       </div>
 
       <div className="mt-3 flex items-center gap-2 text-sm">
-        {step === "email" && errors.email ? (
+        {step === "email" &&
+        errors.email &&
+        errors.email.message !== COMPANY_EMAIL_MESSAGE ? (
           <p role="alert" className={ink ? "text-lavender" : "text-ink-soft"}>
             ⚠ {errors.email.message}
           </p>
