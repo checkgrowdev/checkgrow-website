@@ -98,19 +98,19 @@
     .roas { animation-name: roasIn; transform-box: fill-box; transform-origin: center; }
 
     /* creative card */
-    @keyframes linkIn { 0%,56% {opacity:0} 59% {opacity:0.9} 96% {opacity:0.9} 100% {opacity:0} }
+    @keyframes linkIn { 0%,32% {opacity:0} 35% {opacity:0.9} 96% {opacity:0.9} 100% {opacity:0} }
     .links { animation-name: linkIn; }
-    @keyframes dotV { 0%,58.6% {opacity:0} 60% {opacity:1} 63.6% {opacity:1} 65%,100% {opacity:0} }
+    @keyframes dotV { 0%,34.6% {opacity:0} 36% {opacity:1} 39.6% {opacity:1} 41%,100% {opacity:0} }
     .dot { animation-name: dotV; }
-    @keyframes creativeIn { 0%,58% {opacity:0; transform:translateX(34px)} 63.5% {opacity:1; transform:translateX(-3px)} 65.5% {transform:translateX(0)} 96% {opacity:1} 100% {opacity:0} }
+    @keyframes creativeIn { 0%,34% {opacity:0; transform:translateX(34px)} 39.5% {opacity:1; transform:translateX(-3px)} 41.5% {transform:translateX(0)} 96% {opacity:1} 100% {opacity:0} }
     .creative { animation-name: creativeIn; }
-    @keyframes aiPillIn { 0%,65% {opacity:0; transform:scale(0)} 67.5% {opacity:1; transform:scale(1.2)} 69% {transform:scale(1)} 100% {opacity:1; transform:scale(1)} }
+    @keyframes aiPillIn { 0%,41% {opacity:0; transform:scale(0)} 43.5% {opacity:1; transform:scale(1.2)} 45% {transform:scale(1)} 100% {opacity:1; transform:scale(1)} }
     .aiPill { animation-name: aiPillIn; transform-box: fill-box; transform-origin: center; }
     @keyframes shimmer {
-      0%, 68% { transform: translateX(0); opacity: 0; }
-      68.5%   { opacity: 0.4; }
-      72%     { transform: translateX(170px); opacity: 0.4; }
-      72.5%,100% { transform: translateX(170px); opacity: 0; }
+      0%, 44% { transform: translateX(0); opacity: 0; }
+      44.5%   { opacity: 0.4; }
+      48%     { transform: translateX(170px); opacity: 0.4; }
+      48.5%,100% { transform: translateX(170px); opacity: 0; }
     }
     .shimmer { animation-name: shimmer; }
 
@@ -269,7 +269,7 @@
   <!-- Dot: pipeline -> creative card -->
   <circle class="a dot" r="4.5" fill="#9BA6FF" opacity="0">
     <animateMotion dur="10s" repeatCount="indefinite" calcMode="linear"
-      keyPoints="0;0;1;1" keyTimes="0;0.59;0.645;1"
+      keyPoints="0;0;1;1" keyTimes="0;0.35;0.405;1"
       path="M 540 316 C 580 326, 618 340, 646 362"/>
   </circle>
 

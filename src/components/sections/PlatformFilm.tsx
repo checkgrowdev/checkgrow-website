@@ -167,6 +167,7 @@ export function PlatformFilm() {
   return (
     <section
       ref={secRef}
+      id="solution"
       className="relative overflow-hidden py-20 md:py-28"
       style={{ backgroundColor: "#6373FF" }}
     >

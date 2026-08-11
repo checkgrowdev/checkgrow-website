@@ -103,7 +103,7 @@ export function Problem() {
   }, [active]);
 
   return (
-    <section className="relative overflow-hidden py-24 md:py-32" id="solution">
+    <section className="relative overflow-hidden py-24 md:py-32">
       {/* soft purple corner glows, this section only */}
       <div
         aria-hidden
