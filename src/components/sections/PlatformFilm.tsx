@@ -11,7 +11,7 @@
    manual override. */
 
 import { useEffect, useRef, useState } from "react";
-import { useScroll } from "motion/react";
+import { passProgress } from "@/lib/scrollProgress";
 
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 const smooth = (v: number) => v * v * (3 - 2 * v);
@@ -29,11 +29,6 @@ export function PlatformFilm() {
   const [blocked, setBlocked] = useState(false);
   const lastBlocked = useRef(false);
   const soundRef = useRef(true);
-
-  const { scrollYProgress } = useScroll({
-    target: secRef,
-    offset: ["start end", "end start"],
-  });
 
   useEffect(() => {
     soundRef.current = sound;
@@ -85,7 +80,7 @@ export function PlatformFilm() {
     let raf = 0;
     const frame = () => {
       raf = requestAnimationFrame(frame);
-      const p = scrollYProgress.get();
+      const p = sec ? passProgress(sec) : 0;
 
       if (cardRef.current) {
         const e = prefersReduced ? 1 : ramp(p, 0.03, 0.32);
@@ -143,7 +138,7 @@ export function PlatformFilm() {
       window.removeEventListener("pointerdown", onActivate);
       window.removeEventListener("keydown", onActivate);
     };
-  }, [scrollYProgress]);
+  }, []);
 
   return (
     <section

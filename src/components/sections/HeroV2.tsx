@@ -21,7 +21,7 @@
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Image from "next/image";
-import { useScroll } from "motion/react";
+import { pinProgress } from "@/lib/scrollProgress";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { Trustpilot } from "@/components/Trustpilot";
 import { RotatingWord } from "@/components/RotatingWord";
@@ -447,11 +447,6 @@ export function HeroV2() {
     setTipIndex(i);
   };
 
-  const { scrollYProgress } = useScroll({
-    target: wrapRef,
-    offset: ["start start", "end end"],
-  });
-
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       const raf = requestAnimationFrame(() => setReduced(true));
@@ -563,7 +558,7 @@ export function HeroV2() {
       raf = requestAnimationFrame(frame);
       if (!running) return;
       const t = performance.now() / 1000;
-      const p = scrollYProgress.get();
+      const p = pinProgress(wrap);
 
       /* ease the cursor towards its smoothed position */
       const hasPtr = mouse.x > -999;
@@ -896,7 +891,7 @@ export function HeroV2() {
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerleave", onLeave);
     };
-  }, [scrollYProgress]);
+  }, []);
 
   return (
     <section
