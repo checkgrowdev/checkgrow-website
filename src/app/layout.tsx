@@ -93,12 +93,12 @@ export default function RootLayout({
         {/* Google tag (gtag.js) — Consent Mode v2 defaults to denied; the
             Usercentrics CMP lifts consent, so nothing personal fires
             before the visitor agrees */}
+        {/* eslint-disable-next-line @next/next/next-script-for-ga -- plain
+            gtag snippet keeps the Consent Mode default ahead of config */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-GB1T5THY0V"
         />
-        {/* eslint-disable-next-line @next/next/next-script-for-ga -- plain
-            gtag snippet keeps the Consent Mode default ahead of config */}
         <script
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
