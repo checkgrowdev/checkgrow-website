@@ -327,7 +327,7 @@ export function PlatformFilm() {
             )}
           </button>
         </div>
-        <div className="mt-9 flex justify-center">
+        <div className="relative z-10 mt-9 flex justify-center">
           <a
             href="#waitlist"
             className="inline-flex min-h-12 items-center rounded-full bg-white px-8 text-sm font-semibold text-ink transition-colors duration-200 hover:bg-tint"
