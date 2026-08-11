@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { PrivacySettingsLink } from "@/components/PrivacySettingsLink";
 
 export function Footer() {
   return (
@@ -71,6 +72,7 @@ export function Footer() {
             >
               Terms of Service
             </a>
+            <PrivacySettingsLink className="transition-colors duration-200 hover:text-cream" />
           </div>
         </div>
         <p className="mt-8 text-[8px] leading-relaxed text-tint/45">
