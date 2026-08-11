@@ -20,10 +20,10 @@ const ramp = (p: number, a: number, b: number) => smooth(clamp01((p - a) / (b - 
 /* film chapters: click to jump, the active tab follows playback */
 const CHAPTERS: Array<{ label: string; t: number }> = [
   { label: "Knowledge", t: 3 },
-  { label: "Marketing", t: 34 },
+  { label: "Marketing", t: 36 },
   { label: "Insights", t: 86 },
   { label: "Sales", t: 99 },
-  { label: "AI Chat", t: 130 },
+  { label: "AI Chat", t: 133 },
 ];
 
 export function PlatformFilm() {

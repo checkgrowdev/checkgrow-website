@@ -78,8 +78,8 @@ export const videosJsonLd = [
       "A guided look inside Checkgrow: the Knowledge Centre, campaigns, AI agents, competitor intelligence and insights working as one growth operating system.",
     thumbnailUrl: `${SITE_URL}/videos/checkgrow-platform-poster.jpg`,
     contentUrl: `${SITE_URL}/videos/checkgrow-platform.mp4`,
-    uploadDate: "2026-08-09",
-    duration: "PT2M30S",
+    uploadDate: "2026-08-11",
+    duration: "PT2M26S",
     publisher: { "@id": `${SITE_URL}/#organization` },
   },
   {
