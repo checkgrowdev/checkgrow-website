@@ -176,6 +176,12 @@ export function PlatformFilm() {
         className="pointer-events-none absolute left-1/2 top-1/2 h-[85%] w-[88%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[130px]"
         style={{ backgroundColor: "rgba(164, 146, 225, 0.65)" }}
       />
+      {/* the purple dissolves softly into the next section */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-48 md:h-64"
+        style={{ background: "linear-gradient(to bottom, rgba(247,247,245,0) 0%, rgba(247,247,245,0.55) 55%, #F7F7F5 100%)" }}
+      />
       <div className="wrap relative">
         <div
           ref={cardRef}

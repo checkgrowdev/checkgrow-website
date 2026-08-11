@@ -148,9 +148,8 @@ export function WaitlistForm({
             >
               Your{" "}
               <mark
-                className={`rounded-sm px-1 font-medium ${
-                  ink ? "bg-accent/30 text-cream" : "bg-accent/40 text-ink"
-                }`}
+                className="rounded-sm px-1 font-medium text-white"
+                style={{ backgroundColor: "#6373FF" }}
               >
                 Free access
               </mark>{" "}
@@ -262,9 +261,8 @@ export function WaitlistForm({
           <p className={ink ? "text-tint/80" : "text-ink-soft"}>
             Join now and guarantee{" "}
             <mark
-              className={`rounded-sm px-1 font-medium ${
-                ink ? "bg-accent/30 text-cream" : "bg-accent/40 text-ink"
-              }`}
+              className="rounded-sm px-1 font-medium text-white"
+              style={{ backgroundColor: "#6373FF" }}
             >
               Free access
             </mark>{" "}

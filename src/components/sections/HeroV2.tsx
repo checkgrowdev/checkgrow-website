@@ -709,9 +709,9 @@ export function HeroV2() {
           const mdx = x - sm.x;
           const mdy = y - sm.y;
           const md2 = mdx * mdx + mdy * mdy;
-          if (md2 < 28900 && md2 > 0.01) {
+          if (md2 < 57600 && md2 > 0.01) {
             const md = Math.sqrt(md2);
-            const f = ((170 - md) / 170) ** 2 * 0.55;
+            const f = ((240 - md) / 240) ** 2 * 0.85;
             const curl = pt.sw1 >= 0 ? 1 : -1;
             const resp = 0.35 + 0.65 * pt.delay;
             pt.vx += ((mdx / md) * f + (-mdy / md) * f * 0.55 * curl) * resp;
@@ -849,11 +849,15 @@ export function HeroV2() {
         const wp = clamp01((p - w0) / 0.095);
         const bell = Math.sin(Math.PI * wp);
         el.style.opacity = String(bell);
-        el.style.transform = `translateY(-50%) translateY(${(1 - wp * 2) * 40}vh) scale(${0.96 + 0.06 * bell})`;
+        /* eased lift so the word breathes upward instead of tracking scroll linearly */
+        el.style.transform = `translateY(-50%) translateY(${(1 - smooth(wp) * 2) * 40}vh) scale(${0.96 + 0.06 * bell})`;
         const big = bigRefs.current[i];
         if (big) {
           const full = VERTICALS[i].big;
-          const chars = Math.round(clamp01(wp * 2.6) * full.length);
+          /* types in on arrival, types backwards while it leaves to the top */
+          const typeIn = clamp01(wp * 2.6);
+          const typeOut = 1 - clamp01((wp - 0.68) / 0.24);
+          const chars = Math.round(Math.min(typeIn, typeOut) * full.length);
           const txt = full.slice(0, chars);
           if (big.textContent !== txt) big.textContent = txt;
         }
@@ -931,13 +935,14 @@ export function HeroV2() {
                 <span className="dot-marker" aria-hidden />
                 AI Native Growth Marketing
               </p>
-              <h1 className="text-display mt-6 text-balance">
+              <h1 className="text-display mt-6 text-balance" style={{ fontWeight: 400 }}>
                 The go-to-market engine that learns your{" "}
                 <span className="relative whitespace-nowrap">
                   <RotatingWord />
                   <span
                     aria-hidden
-                    className="absolute inset-x-0 bottom-1 -z-10 h-3 rounded-sm bg-accent/45"
+                    className="absolute inset-x-0 bottom-1 -z-10 h-3 rounded-sm"
+                    style={{ backgroundColor: "#6373FF" }}
                   />
                 </span>
                 .
