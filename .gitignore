@@ -46,3 +46,6 @@ next-env.d.ts
 
 # ffmpeg two-pass artefacts
 ffmpeg2pass-*.log*
+
+# keep the template committed
+!.env.example
