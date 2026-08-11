@@ -53,9 +53,34 @@ export function Footer() {
             </a>
           </nav>
         </div>
-        <div className="mt-10 flex flex-col justify-between gap-3 text-xs text-tint/60 sm:flex-row sm:items-center">
+        <div className="mt-10 flex flex-col justify-between gap-6 text-xs text-tint/60 sm:flex-row sm:items-end">
           <p>© Copyright Checkgrow · checkgrow.com</p>
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
+          <div className="flex flex-col items-start gap-4 sm:items-end">
+            <div className="flex items-center gap-6">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-tint/50">
+                Backed by
+              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/backers/aymo-ventures.png"
+                alt="AYMO Ventures"
+                width={120}
+                height={42}
+                loading="lazy"
+                className="h-auto w-[104px] max-w-[120px] opacity-90"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/backers/eu.png"
+                alt="Co-funded by the European Union"
+                width={120}
+                height={27}
+                loading="lazy"
+                className="h-auto w-[120px] max-w-[120px] opacity-90"
+              />
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
             <a
               href="https://ai.checkgrow.com/privacy-policy"
               target="_blank"
@@ -73,6 +98,7 @@ export function Footer() {
               Terms of Service
             </a>
             <PrivacySettingsLink className="transition-colors duration-200 hover:text-cream" />
+            </div>
           </div>
         </div>
         <p className="mt-8 text-[8px] leading-relaxed text-tint/45">
