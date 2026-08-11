@@ -2,19 +2,20 @@ import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === "production";
 
-/* Everything on this site is self-hosted (fonts, images, videos), so the
-   CSP can stay tight: no external origins at all. 'unsafe-inline' for
-   scripts/styles is required by Next's hydration payload and Tailwind's
-   inline style attributes. CSP only ships in production so dev HMR
-   (which needs eval) keeps working. */
+/* Everything on this site is self-hosted (fonts, images, videos) except the
+   Usercentrics consent banner, so the CSP stays tight: 'self' plus the
+   usercentrics.eu origins it loads its script, API calls and vendor logos
+   from. 'unsafe-inline' for scripts/styles is required by Next's hydration
+   payload and Tailwind's inline style attributes. CSP only ships in
+   production so dev HMR (which needs eval) keeps working. */
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline' https://*.usercentrics.eu",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
-  "font-src 'self'",
+  "img-src 'self' data: blob: https://*.usercentrics.eu",
+  "font-src 'self' https://*.usercentrics.eu",
   "media-src 'self'",
-  "connect-src 'self'",
+  "connect-src 'self' https://*.usercentrics.eu",
   "object-src 'none'",
   "frame-ancestors 'none'",
   "base-uri 'self'",

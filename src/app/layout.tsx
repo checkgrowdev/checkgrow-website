@@ -83,6 +83,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistSans.variable}>
       <body>
+        {/* Usercentrics consent banner — async scripts are hoisted into <head> */}
+        <script
+          id="usercentrics-cmp"
+          src="https://web.cmp.usercentrics.eu/ui/loader.js"
+          data-settings-id="vrUg52RzUffi2O"
+          async
+        />
         <MotionProvider>{children}</MotionProvider>
         <script
           type="application/ld+json"
