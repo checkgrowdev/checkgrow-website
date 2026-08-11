@@ -53,7 +53,7 @@ export function Footer() {
           </nav>
         </div>
         <div className="mt-10 flex flex-col justify-between gap-3 text-xs text-tint/60 sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Checkgrow. All rights reserved.</p>
+          <p>© Copyright Checkgrow · checkgrow.com</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             <a
               href="https://ai.checkgrow.com/privacy-policy"
@@ -73,6 +73,20 @@ export function Footer() {
             </a>
           </div>
         </div>
+        <p className="mt-8 text-[8px] leading-relaxed text-tint/45">
+          Checkgrow d.o.o., registered in Zagreb, Croatia, VAT ID:
+          HR16006061302, operates in accordance with applicable Croatian and
+          European Union regulations. We do not collect, process, or store any
+          personal or business data without explicit user consent or a lawful
+          basis as defined under the General Data Protection Regulation
+          (GDPR). All integrations and authentications are handled securely
+          through authorised providers, and we do not store passwords or
+          access third-party accounts without proper permission. All rights,
+          obligations, data usage terms, payment conditions, and compliance
+          details are fully outlined in our Terms and Conditions and Privacy
+          Policy. By using the Checkgrow platform, you acknowledge and agree
+          to these policies.
+        </p>
       </div>
     </footer>
   );
