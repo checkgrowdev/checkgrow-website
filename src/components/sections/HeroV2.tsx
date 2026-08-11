@@ -942,7 +942,7 @@ export function HeroV2() {
                   <span
                     aria-hidden
                     className="absolute inset-x-0 bottom-1 -z-10 h-3 rounded-sm"
-                    style={{ backgroundColor: "#6373FF" }}
+                    style={{ backgroundColor: "rgba(99, 115, 255, 0.4)" }}
                   />
                 </span>
                 .
