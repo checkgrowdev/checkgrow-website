@@ -1,6 +1,7 @@
 import { Nav } from "@/components/Nav";
 import { MobileScrollRail } from "@/components/MobileScrollRail";
 import { HeroV2 } from "@/components/sections/HeroV2";
+import { LogoMarquee } from "@/components/sections/LogoMarquee";
 import { Credibility } from "@/components/sections/Credibility";
 import { PlatformFilm } from "@/components/sections/PlatformFilm";
 import { Problem } from "@/components/sections/Problem";
@@ -21,6 +22,7 @@ export default function Home() {
       <MobileScrollRail />
       <main>
         <HeroV2 />
+        <LogoMarquee />
         <Credibility />
         <PlatformFilm />
         <Problem />
