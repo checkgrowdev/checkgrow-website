@@ -1,4 +1,5 @@
 import { Nav } from "@/components/Nav";
+import { MobileScrollRail } from "@/components/MobileScrollRail";
 import { HeroV2 } from "@/components/sections/HeroV2";
 import { Credibility } from "@/components/sections/Credibility";
 import { PlatformFilm } from "@/components/sections/PlatformFilm";
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <>
       <Nav />
+      <MobileScrollRail />
       <main>
         <HeroV2 />
         <Credibility />

@@ -31,6 +31,31 @@ const integrations = [
     icon: "/brand-icons/n8n.svg",
     role: "Automations triggered from tasks",
   },
+  {
+    name: "TikTok",
+    icon: "/brand-icons/tiktok.svg",
+    role: "Trends, creators and ad activity",
+  },
+  {
+    name: "Notion",
+    icon: "/brand-icons/notion.svg",
+    role: "Pages and docs feed the knowledge base",
+  },
+  {
+    name: "Slack",
+    icon: "/brand-icons/slack.svg",
+    role: "Updates and approvals where the team talks",
+  },
+  {
+    name: "Supabase",
+    icon: "/brand-icons/supabase.svg",
+    role: "Product and customer data, queried live",
+  },
+  {
+    name: "Webhook",
+    icon: "/brand-icons/webhook.svg",
+    role: "Push leads and events to any system",
+  },
 ];
 
 export function Integrations() {

@@ -612,9 +612,11 @@ export function HeroV2() {
       for (const am of ambient) {
         const ax = am.x * w + Math.sin(t * 0.15 + am.ph) * 12;
         const ay = am.y * h + Math.cos(t * 0.12 + am.ph * 1.4) * 9;
-        const tw = prefersReduced || am.solid
+        const tw = prefersReduced
           ? 0.94 + 0.06 * Math.sin(t * 1.3 + am.ph)
-          : 0.55 + 0.45 * Math.sin(t * 1.3 + am.ph);
+          : am.solid
+            ? 0.4 + 0.6 * (0.5 + 0.5 * Math.sin(t * (0.7 + (am.ph % 1)) + am.ph))
+            : 0.55 + 0.45 * Math.sin(t * 1.3 + am.ph);
         const a = am.a * tw * (isMobile && !am.solid ? 0.6 : 1);
         if (am.sharp) {
           ctx.fillStyle = `${SHARP_COLORS[am.sp]}${a.toFixed(3)})`;

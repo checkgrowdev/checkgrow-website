@@ -17,6 +17,15 @@ const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 const smooth = (v: number) => v * v * (3 - 2 * v);
 const ramp = (p: number, a: number, b: number) => smooth(clamp01((p - a) / (b - a)));
 
+/* film chapters: click to jump, the active tab follows playback */
+const CHAPTERS: Array<{ label: string; t: number }> = [
+  { label: "Knowledge", t: 3 },
+  { label: "Marketing", t: 34 },
+  { label: "Insights", t: 86 },
+  { label: "Sales", t: 99 },
+  { label: "AI Chat", t: 130 },
+];
+
 export function PlatformFilm() {
   const secRef = useRef<HTMLElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -29,6 +38,8 @@ export function PlatformFilm() {
   const [blocked, setBlocked] = useState(false);
   const lastBlocked = useRef(false);
   const soundRef = useRef(true);
+  const [chapter, setChapter] = useState(0);
+  const lastChapter = useRef(0);
 
   useEffect(() => {
     soundRef.current = sound;
@@ -124,6 +135,19 @@ export function PlatformFilm() {
           lastBlocked.current = isBlocked;
           setBlocked(isBlocked);
         }
+
+        /* the chapter tab follows playback */
+        let ci = 0;
+        for (let i = CHAPTERS.length - 1; i >= 0; i--) {
+          if (v.currentTime >= CHAPTERS[i].t - 0.5) {
+            ci = i;
+            break;
+          }
+        }
+        if (ci !== lastChapter.current) {
+          lastChapter.current = ci;
+          setChapter(ci);
+        }
       }
     };
     raf = requestAnimationFrame(frame);
@@ -158,6 +182,38 @@ export function PlatformFilm() {
           className="relative mx-auto max-w-6xl overflow-hidden rounded-xl ring-1 ring-white/20 shadow-[0_36px_70px_-12px_rgba(24,24,24,0.45)]"
           style={{ opacity: 0 }}
         >
+          {/* chapter tabs spanning the top edge of the film */}
+          <div className="flex w-full bg-white" role="tablist" aria-label="Film chapters">
+            {CHAPTERS.map((c, i) => (
+              <button
+                key={c.label}
+                type="button"
+                role="tab"
+                aria-selected={chapter === i}
+                onClick={() => {
+                  engaged.current = true;
+                  vetoed.current = false;
+                  const v = videoRef.current;
+                  if (v) {
+                    v.currentTime = c.t;
+                    v.play().catch(() => {});
+                  }
+                  lastChapter.current = i;
+                  setChapter(i);
+                }}
+                className={`relative flex-1 whitespace-nowrap px-1 py-2.5 text-[11px] font-medium transition-colors duration-200 sm:py-3.5 sm:text-sm ${
+                  chapter === i ? "text-[#6373FF]" : "text-ink-soft hover:text-ink"
+                }`}
+              >
+                {c.label}
+                <span
+                  aria-hidden
+                  className="absolute inset-x-0 bottom-0 h-0.5 origin-left bg-[#6373FF] transition-transform duration-300 ease-out"
+                  style={{ transform: chapter === i ? "scaleX(1)" : "scaleX(0)" }}
+                />
+              </button>
+            ))}
+          </div>
           <video
             ref={videoRef}
             src="/videos/checkgrow-platform.mp4"

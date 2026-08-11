@@ -201,8 +201,13 @@ export function Replaces() {
           {/* Totals */}
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             <div className="rounded-xl bg-white p-7 shadow-soft ring-1 ring-cream-3">
-              <p className="text-label text-ink-soft">Full stack</p>
-              <p className="text-h2 mt-3">$1,199/mo</p>
+              <p className="text-label flex items-center gap-2.5 text-ink-soft">
+                Full stack
+                <span className="rounded-full bg-cream-3 px-2.5 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-ink-soft/80">
+                  Before
+                </span>
+              </p>
+              <p className="text-h2 mt-3 line-through decoration-ink-soft/50 decoration-2">$1,199/mo</p>
               <p className="mt-2 text-sm leading-relaxed text-ink-soft">
                 before seats, overages and the hours spent stitching it
                 together
@@ -223,15 +228,20 @@ export function Replaces() {
               </ul>
             </div>
 
-            <div className="rounded-xl bg-ink p-7 text-cream shadow-raised">
-              <p className="text-label text-tint/80">Checkgrow</p>
+            <div className="rounded-xl p-7 text-white shadow-raised" style={{ backgroundColor: "#6373FF" }}>
+              <p className="text-label flex items-center gap-2.5 text-white/85">
+                Checkgrow
+                <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-white">
+                  Now
+                </span>
+              </p>
               <div className="mt-3 flex flex-wrap items-center gap-3">
                 <p className="text-h2">€79/month</p>
-                <span className="rounded-full bg-accent px-3.5 py-1.5 text-xs font-semibold text-ink">
+                <span className="rounded-full bg-white/25 px-3.5 py-1.5 text-xs font-semibold text-white">
                   Start for free
                 </span>
               </div>
-              <p className="mt-2 text-sm leading-relaxed text-tint/90">
+              <p className="mt-2 text-sm leading-relaxed text-white/90">
                 one platform, one source of truth, one bill
               </p>
               <ul className="mt-5 flex flex-col gap-2.5">
@@ -240,9 +250,9 @@ export function Replaces() {
                   "Every result feeds the next campaign",
                   "Reporting already connected",
                 ].map((li) => (
-                  <li key={li} className="flex items-start gap-2.5 text-sm text-tint/90">
+                  <li key={li} className="flex items-start gap-2.5 text-sm text-white/90">
                     <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden className="mt-1 shrink-0">
-                      <path d="M1.5 6.5 L4.5 9.5 L10.5 2.5" stroke="#9BA6FF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                      <path d="M1.5 6.5 L4.5 9.5 L10.5 2.5" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.85" />
                     </svg>
                     {li}
                   </li>
@@ -250,7 +260,7 @@ export function Replaces() {
               </ul>
               <a
                 href="#waitlist"
-                className="mt-7 inline-flex min-h-12 items-center rounded-full bg-cream px-8 text-sm font-semibold text-ink transition-colors duration-200 hover:bg-cream-3"
+                className="mt-7 inline-flex min-h-12 items-center rounded-full bg-white px-8 text-sm font-semibold text-[#6373FF] transition-colors duration-200 hover:bg-cream"
               >
                 Join the waitlist
               </a>

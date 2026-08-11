@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const links = [
   { href: "#platform", label: "Platform" },
@@ -16,12 +16,37 @@ const links = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const progressRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 72);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  /* each desktop link carries a purple line that fills while the user
+     scrolls through its section (a link's range runs to the next link's
+     section, so the page always maps onto exactly one filling line) */
+  useEffect(() => {
+    const ids = links.map((l) => l.href.slice(1)).concat("waitlist");
+    let raf = 0;
+    const frame = () => {
+      raf = requestAnimationFrame(frame);
+      const probe = window.scrollY + window.innerHeight * 0.5;
+      for (let i = 0; i < links.length; i++) {
+        const el = progressRefs.current[i];
+        const sec = document.getElementById(ids[i]);
+        const next = document.getElementById(ids[i + 1]);
+        if (!el || !sec) continue;
+        const top = sec.offsetTop;
+        const end = next ? next.offsetTop : top + sec.offsetHeight;
+        const p = Math.min(1, Math.max(0, (probe - top) / Math.max(1, end - top)));
+        el.style.transform = `scaleX(${p})`;
+      }
+    };
+    raf = requestAnimationFrame(frame);
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   /* scrolled: the bar compresses into a floating glassy pill; back at the
@@ -70,13 +95,21 @@ export function Nav() {
             pill ? "gap-6" : "gap-8"
           }`}
         >
-          {links.map((l) => (
+          {links.map((l, i) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-ink-soft transition-colors duration-200 hover:text-ink"
+              className="relative text-sm text-ink-soft transition-colors duration-200 hover:text-ink"
             >
               {l.label}
+              <span
+                aria-hidden
+                ref={(el) => {
+                  progressRefs.current[i] = el;
+                }}
+                className="absolute -bottom-1 left-0 h-[2px] w-full origin-left rounded-full bg-[#6373FF]"
+                style={{ transform: "scaleX(0)" }}
+              />
             </a>
           ))}
         </div>
