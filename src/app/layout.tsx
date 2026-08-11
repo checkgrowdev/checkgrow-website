@@ -90,6 +90,30 @@ export default function RootLayout({
           data-settings-id="vrUg52RzUffi2O"
           async
         />
+        {/* Google tag (gtag.js) — Consent Mode v2 defaults to denied; the
+            Usercentrics CMP lifts consent, so nothing personal fires
+            before the visitor agrees */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-GB1T5THY0V"
+        />
+        {/* eslint-disable-next-line @next/next/next-script-for-ga -- plain
+            gtag snippet keeps the Consent Mode default ahead of config */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 2000
+});
+gtag('js', new Date());
+gtag('config', 'G-GB1T5THY0V');`,
+          }}
+        />
         <MotionProvider>{children}</MotionProvider>
         <script
           type="application/ld+json"

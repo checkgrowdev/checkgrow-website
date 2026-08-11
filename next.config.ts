@@ -10,12 +10,12 @@ const isProd = process.env.NODE_ENV === "production";
    production so dev HMR (which needs eval) keeps working. */
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://*.usercentrics.eu",
+  "script-src 'self' 'unsafe-inline' https://*.usercentrics.eu https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://*.usercentrics.eu",
+  "img-src 'self' data: blob: https://*.usercentrics.eu https://*.google-analytics.com https://www.googletagmanager.com",
   "font-src 'self' https://*.usercentrics.eu",
   "media-src 'self'",
-  "connect-src 'self' https://*.usercentrics.eu",
+  "connect-src 'self' https://*.usercentrics.eu https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com",
   "object-src 'none'",
   "frame-ancestors 'none'",
   "base-uri 'self'",
