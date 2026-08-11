@@ -51,16 +51,17 @@ const LABEL_LAYOUT: Array<{ x: number; y: number; s: "sm" | "md" | "lg" | "xl"; 
   { x: 0.22, y: -0.17, s: "xl", k: 0.032 },  // Campaigns
 ];
 
-/* the phone gets its own, taller constellation so pills never collide */
+/* the phone gets its own, taller constellation so pills never collide;
+   the middle rows sit at ±0.95 so the centre phrase keeps clear air */
 const LABEL_LAYOUT_M: Array<{ x: number; y: number }> = [
-  { x: -0.9, y: -1.55 },  // Brand
-  { x: 0.55, y: -1.55 },  // ICP
-  { x: 0.75, y: -0.55 },  // Use Cases
-  { x: 0.9, y: 0.55 },    // Products
-  { x: -0.05, y: 1.55 },  // Competitors
-  { x: 0.12, y: 0.55 },   // Social Media
-  { x: -0.9, y: 0.58 },   // Tracking
-  { x: -0.35, y: -0.55 }, // Campaigns
+  { x: -0.9, y: -1.6 },   // Brand
+  { x: 0.55, y: -1.6 },   // ICP
+  { x: 0.75, y: -0.95 },  // Use Cases
+  { x: 0.9, y: 0.95 },    // Products
+  { x: -0.05, y: 1.6 },   // Competitors
+  { x: 0.12, y: 0.95 },   // Social Media
+  { x: -0.9, y: 0.98 },   // Tracking
+  { x: -0.35, y: -0.95 }, // Campaigns
 ];
 
 const LABEL_SIZE: Record<string, string> = {
@@ -131,10 +132,10 @@ function tipSegments(tip: { text: string; marks: string[] }) {
 }
 
 const VERTICALS: Array<{ big: string; small: string[] }> = [
-  { big: "Operational", small: ["AI Assistant", "AI Agents", "AI Tasks", "Dashboard"] },
+  { big: "Operations", small: ["AI Assistant", "AI Agents", "AI Tasks", "Dashboard", "Integrations", "Token Management"] },
   { big: "Marketing", small: ["Campaigns", "Social Media", "Content", "Website", "Tracking"] },
-  { big: "Sales", small: ["Companies", "Targets", "Leads"] },
-  { big: "Research\n& Report", small: ["Insights", "Competitors", "Market Trends"] },
+  { big: "Sales", small: ["Companies", "Targets", "Leads", "Sales Brain"] },
+  { big: "Research\n& Report", small: ["Insights", "Competitors", "Market Trends", "KPIs", "Conversion Events"] },
 ];
 
 /* satellite word offsets around each big word (percent of the word box;
@@ -145,6 +146,8 @@ const SAT_POS: Array<CSSProperties> = [
   { left: "-8%", bottom: "calc(-44% * var(--satk))" },
   { right: "-4%", bottom: "calc(-58% * var(--satk))" },
   { left: "34%", top: "calc(-78% * var(--satk))" },
+  { left: "28%", bottom: "calc(-88% * var(--satk))" },
+  { right: "-22%", top: "calc(16% * var(--satk))" },
 ];
 
 /* channel icons hugging the centre on a loose ellipse (viewport %) */
@@ -425,6 +428,7 @@ export function HeroV2() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const typedRef = useRef<HTMLSpanElement>(null);
   const labelRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const ctxPhraseRef = useRef<HTMLDivElement>(null);
   const teamRefs = useRef<(HTMLDivElement | null)[]>([]);
   const iconRefs = useRef<(HTMLDivElement | null)[]>([]);
   const wordRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -589,8 +593,9 @@ export function HeroV2() {
         const di = rand01((i + 1) * 127.1);
         labelO[i] =
           ramp(p, 0.31 + di * 0.07, 0.36 + di * 0.07) * (1 - ramp(p, 0.47, 0.52));
-        const lx = isMobile ? LABEL_LAYOUT_M[i].x : L.x * 1.1;
-        const ly = isMobile ? LABEL_LAYOUT_M[i].y : L.y * 1.35;
+        /* pushed outward so the centre phrase keeps clear air */
+        const lx = isMobile ? LABEL_LAYOUT_M[i].x : L.x * 1.45;
+        const ly = isMobile ? LABEL_LAYOUT_M[i].y : L.y * 1.8;
         labelPos[i].x =
           cxB +
           lx * S +
@@ -769,6 +774,14 @@ export function HeroV2() {
       }
       if (hintRef.current) {
         hintRef.current.style.opacity = String(1 - ramp(p, 0, 0.04));
+      }
+
+      /* the centre phrase shares the bullets' window, settling in as the
+         constellation completes */
+      if (ctxPhraseRef.current) {
+        const o = ramp(p, 0.34, 0.4) * (1 - ramp(p, 0.47, 0.52));
+        ctxPhraseRef.current.style.opacity = String(o);
+        ctxPhraseRef.current.style.transform = `translate(-50%, -50%) scale(${0.94 + 0.06 * smooth(o)})`;
       }
 
       /* mixed-size bullets breathe and follow the cursor */
@@ -977,6 +990,13 @@ export function HeroV2() {
                 Hover (or tap) opens a typewritten value tooltip that
                 follows the cursor. */}
             <div className="pointer-events-none absolute inset-0">
+              <div
+                ref={ctxPhraseRef}
+                className="absolute left-1/2 top-1/2 w-full px-6 text-center"
+                style={{ opacity: 0, transform: "translate(-50%, -50%)" }}
+              >
+                <h2 className="text-h2 text-balance">Build your context</h2>
+              </div>
               {NODES.map((n, i) => (
                 <div
                   key={n}
@@ -1061,7 +1081,7 @@ export function HeroV2() {
                         ref={(el) => {
                           satRefs.current[i][j] = el;
                         }}
-                        className="pointer-events-auto absolute whitespace-nowrap text-sm font-medium text-ink-soft sm:text-base"
+                        className="pointer-events-auto absolute whitespace-nowrap text-sm font-bold text-ink-soft sm:text-base"
                         style={{ ...SAT_POS[j % SAT_POS.length], opacity: 0 }}
                       >
                         <span className="inline-block cursor-default transition-transform duration-300 ease-out hover:scale-125">
