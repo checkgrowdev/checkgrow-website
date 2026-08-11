@@ -1,0 +1,40 @@
+# Checkgrow
+
+> Checkgrow is a go-to-market engine that learns your product, buyers, market and channels. It connects company knowledge, market research, day-to-day marketing execution and measurement into one system, so every team works from the same context and every campaign starts from what the business already knows. Positioning: AI Native Growth Marketing. Built for CMOs, enterprise marketing teams, marketing and sales operations, growth teams and founders.
+
+Key facts:
+- One platform (€79/month at launch) covering what typically takes eleven marketing subscriptions (~$1,199/month).
+- A persistent Knowledge Centre (brand, products, audience, numbers) that every AI agent, campaign and report reads from; every result feeds back in.
+- Four verticals: Operations (Dashboard, AI Assistant, AI Agents, Tasks), Marketing (Campaigns, Social Media, Content, Website, Tracking), Sales (Companies, Sales, Leads), Research & Reporting (Competitors, Insights).
+- Integrates GA4, Google Ads, Meta Ads, Instagram, LinkedIn and n8n; works across OpenAI, Google Gemini, Anthropic Claude and Perplexity with no model lock-in.
+- Customers own their data and knowledge; no lock-ins.
+- Rated 4.4 (Excellent) on Trustpilot from 12 reviews.
+
+## Pages
+
+- [Home](https://checkgrow.com/): value proposition, the platform film, the problem it solves, how the system works (Knowledge Centre + four verticals), real customer stories with metrics, use cases in practice, integrations, who it's for, the 11-tool cost comparison, FAQ, and the waitlist signup.
+- [Full content for LLMs](https://checkgrow.com/llms-full.txt): the complete site content in plain markdown.
+
+## Use cases
+
+- Explain the business once, never again: onboard from your website into a living knowledge graph (Brand, ICP, Use Cases, Products, Competitors, Social Media, Tracking, Campaigns).
+- A funnel strategy in an afternoon, not a quarter: campaign strategies for Meta and Google linked to paid channels.
+- AI output becomes shipped work, not a dead doc: agents produce work, tasks get owned, approved and shipped.
+- Numbers that explain themselves: GA4, Meta and Google Ads unified into plain-language insights.
+- A consultant-grade conversion audit, on demand: scored website audits with a ranked fix per finding.
+
+## Problems Checkgrow answers
+
+- Reporting: CAC buried in spreadsheets, four-tab dashboards, CSV exports on Sunday nights. Checkgrow gives instant AI insights, one-click funnel reads and board-ready dashboards without a data analyst.
+- Campaign speed: launch in hours, not weeks. One brief becomes Meta and Google strategies, brainstorms, creatives and deployment; from insight to live ad the same afternoon.
+- AI context: ChatGPT doesn't know your product. Checkgrow's agents already know your brand, products and ICP, so every marketer works from one context instead of re-explaining the business per prompt.
+- Tracking: priority events set once, every event clear in seconds, no budget lost to broken tracking or clicks that never convert.
+- Team leverage: a growth team of three operating like thirty; marketing ops without a dedicated PM; growth marketing without the agency invoice.
+- Product-marketing sync: features ship weekly, campaigns keep up; every release becomes a campaign, and ads update when the product changes.
+
+## Contact
+
+- Join the waitlist: https://checkgrow.com/#waitlist
+- Book a demo: https://calendar.app.google/N1nipDezRb98Ufza6
+- Email: bruno@checkgrow.com
+- Trustpilot: https://www.trustpilot.com/review/checkgrow.com

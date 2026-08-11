@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local lead audit log (PII) and dev logs
+/.data/
+.dev-server.log
+
+# ffmpeg two-pass artefacts
+ffmpeg2pass-*.log*

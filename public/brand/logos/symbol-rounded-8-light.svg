@@ -1,0 +1,23 @@
+<svg width="128" height="128" viewBox="0 0 1062 1062" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="4" width="1054" height="1054" rx="66.375" fill="#F2F2EF" stroke="#ECECE9" stroke-width="8"/>
+  <g fill="#2A2722" stroke="#2A2722" stroke-width="4">
+    <circle cx="372.756" cy="372.759" r="37.756"/>
+    <circle cx="478.357" cy="372.759" r="37.756"/>
+    <circle cx="583.951" cy="372.759" r="37.756"/>
+    <circle cx="689.553" cy="372.759" r="37.756"/>
+    <circle cx="372.756" cy="478.358" r="37.756"/>
+    <circle cx="478.357" cy="478.358" r="37.756"/>
+    <circle cx="583.951" cy="478.358" r="37.756"/>
+    <circle cx="478.357" cy="583.954" r="37.756"/>
+    <circle cx="689.553" cy="583.954" r="37.756"/>
+    <circle cx="372.756" cy="689.55" r="37.756"/>
+    <circle cx="583.951" cy="689.55" r="37.756"/>
+    <circle cx="689.553" cy="689.55" r="37.756"/>
+  </g>
+  <g stroke="#2A2722" stroke-width="4">
+    <circle cx="689.553" cy="478.358" r="37.756"/>
+    <circle cx="372.756" cy="583.954" r="37.756"/>
+    <circle cx="583.951" cy="583.954" r="37.756"/>
+    <circle cx="478.357" cy="689.55" r="37.756"/>
+  </g>
+</svg>

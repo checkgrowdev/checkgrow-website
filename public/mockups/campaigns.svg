@@ -1,0 +1,339 @@
+<svg viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="Geist, Inter, -apple-system, 'Segoe UI', sans-serif" role="img" aria-label="Campaigns — AI generates strategy, creatives and manages your campaign across channels in one place">
+  <defs>
+    <filter id="shadowMd" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#181818" flood-opacity="0.08"/>
+    </filter>
+    <filter id="shadowLg" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#181818" flood-opacity="0.10"/>
+    </filter>
+    <filter id="shadowSm" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#181818" flood-opacity="0.07"/>
+    </filter>
+    <clipPath id="splitClip"><rect x="213" y="392" width="310" height="10" rx="5"/></clipPath>
+    <clipPath id="ctaClip"><rect x="554" y="496" width="142" height="26" rx="8"/></clipPath>
+    <symbol id="icLi" viewBox="0 0 48 48">
+      <path d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z" fill="#0077B5"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3188 14.8227C17.3188 16.3918 16.1377 17.6473 14.2412 17.6473H14.2064C12.3805 17.6473 11.2 16.3918 11.2 14.8227C11.2 13.2204 12.4164 12 14.277 12C16.1377 12 17.2835 13.2204 17.3188 14.8227ZM16.9605 19.8778V36.2196H11.5216V19.8778H16.9605ZM36.5752 36.2196L36.5754 26.8497C36.5754 21.8303 33.8922 19.4941 30.3131 19.4941C27.4254 19.4941 26.1325 21.0802 25.4107 22.1929V19.8783H19.9711C20.0428 21.4117 19.9711 36.22 19.9711 36.22H25.4107V27.0934C25.4107 26.605 25.446 26.1178 25.5898 25.7681C25.9829 24.7924 26.8779 23.7822 28.3805 23.7822C30.3494 23.7822 31.1365 25.2807 31.1365 27.4767V36.2196H36.5752Z" fill="white"/>
+    </symbol>
+    <symbol id="icGads" viewBox="46 55 208 189">
+      <path d="M116.782 78.7999C118.793 73.5518 121.557 68.7202 125.661 64.8049C142.08 48.8938 169.22 52.8924 180.361 72.8854C188.737 88.0467 197.617 102.875 206.245 117.869C220.652 142.777 235.228 167.685 249.468 192.676C261.447 213.586 248.463 239.993 224.673 243.575C210.098 245.741 196.444 239.077 188.905 226.081C176.256 204.172 163.524 182.263 150.875 160.438C150.624 159.938 150.289 159.521 149.954 159.105C148.613 158.022 148.027 156.439 147.189 155.023C141.577 145.193 135.797 135.447 130.185 125.7C126.583 119.369 122.813 113.121 119.211 106.79C115.945 101.125 114.437 94.9609 114.604 88.4632C114.856 85.131 115.274 81.7989 116.782 78.7999Z" fill="#3C8BD9"/>
+      <path d="M116.783 78.8C116.029 81.799 115.359 84.7979 115.191 87.9635C114.94 94.961 116.699 101.459 120.217 107.54C129.432 123.284 138.646 139.112 147.776 154.94C148.614 156.356 149.284 157.772 150.122 159.105C145.096 167.769 140.07 176.349 134.96 185.013C127.924 197.092 120.887 209.254 113.767 221.333C113.432 221.333 113.348 221.166 113.265 220.917C113.181 220.25 113.432 219.667 113.6 219.001C117.034 206.505 114.186 195.426 105.558 185.929C100.281 180.181 93.5796 176.932 85.8731 175.849C75.8211 174.433 66.9419 177.015 58.9841 183.263C57.5601 184.346 56.6386 185.929 54.9633 186.762C54.6283 186.762 54.4607 186.595 54.377 186.345C58.3977 179.431 62.3347 172.517 66.3555 165.603C82.9412 136.946 99.527 108.29 116.196 79.7164C116.364 79.3832 116.615 79.1333 116.783 78.8Z" fill="#FABC04"/>
+      <path d="M54.7118 186.595C56.3033 185.179 57.8111 183.68 59.4865 182.347C79.8417 166.352 110.416 177.932 114.856 203.256C115.945 209.337 115.359 215.169 113.516 221C113.432 221.5 113.348 221.916 113.181 222.416C112.427 223.749 111.757 225.165 110.919 226.498C103.464 238.744 92.4904 244.825 78.0826 243.908C61.5806 242.742 48.5969 230.413 46.3352 214.086C45.2462 206.172 46.8378 198.758 50.9423 191.927C51.78 190.427 52.7852 189.094 53.7066 187.595C54.1254 187.262 53.9579 186.595 54.7118 186.595Z" fill="#34A852"/>
+    </symbol>
+    <symbol id="icIg" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="20" height="20" rx="6" stroke="url(#icIgG)" stroke-width="2" fill="none"/>
+      <circle cx="12" cy="12" r="4" stroke="url(#icIgG)" stroke-width="2" fill="none"/>
+      <circle cx="17.4" cy="6.7" r="1.1" fill="#ee2a7b"/>
+    </symbol>
+    <linearGradient id="icIgG" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f9ce34"/><stop offset=".5" stop-color="#ee2a7b"/><stop offset="1" stop-color="#6228d7"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .a { animation-duration: 10s; animation-iteration-count: infinite; animation-timing-function: linear; }
+
+    @keyframes haloIn { 0% {opacity:0} 8% {opacity:1} 96% {opacity:1} 100% {opacity:0} }
+    .halo { animation-name: haloIn; }
+
+    @keyframes cardIn {
+      0%, 3% { opacity:0; transform: translateY(18px) scale(0.965); }
+      8.5%   { opacity:1; transform: translateY(-2px) scale(1.006); }
+      11%    { transform: translateY(0) scale(1); }
+      96%    { opacity:1; transform: none; }
+      100%   { opacity:0; transform: none; }
+    }
+    .card { animation-name: cardIn; transform-box: fill-box; transform-origin: center; }
+
+    /* stepper: neutral pills in, then sequential completion + line draws */
+    @keyframes stepN1 { 0%,10%   {opacity:0; transform:translateY(6px)} 13%   {opacity:1; transform:translateY(0)} 100% {opacity:1} }
+    @keyframes stepN2 { 0%,11.5% {opacity:0; transform:translateY(6px)} 14.5% {opacity:1; transform:translateY(0)} 100% {opacity:1} }
+    @keyframes stepN3 { 0%,13%   {opacity:0; transform:translateY(6px)} 16%   {opacity:1; transform:translateY(0)} 100% {opacity:1} }
+    @keyframes stepN4 { 0%,14.5% {opacity:0; transform:translateY(6px)} 17.5% {opacity:1; transform:translateY(0)} 100% {opacity:1} }
+    .stepN1{animation-name:stepN1}.stepN2{animation-name:stepN2}.stepN3{animation-name:stepN3}.stepN4{animation-name:stepN4}
+
+    @keyframes stepC1 { 0%,17%   {opacity:0; transform:scale(0.7)} 19%   {opacity:1; transform:scale(1.08)} 20.5% {transform:scale(1)} 100% {opacity:1; transform:scale(1)} }
+    @keyframes stepC2 { 0%,23.5% {opacity:0; transform:scale(0.7)} 25.5% {opacity:1; transform:scale(1.08)} 27%   {transform:scale(1)} 100% {opacity:1; transform:scale(1)} }
+    @keyframes stepC3 { 0%,30.5% {opacity:0; transform:scale(0.7)} 32.5% {opacity:1; transform:scale(1.08)} 34%   {transform:scale(1)} 100% {opacity:1; transform:scale(1)} }
+    @keyframes stepC4 { 0%,37.5% {opacity:0; transform:scale(0.7)} 39.5% {opacity:1; transform:scale(1.08)} 41%   {transform:scale(1)} 100% {opacity:1; transform:scale(1)} }
+    .stepC1{animation-name:stepC1; transform-box:fill-box; transform-origin:center}
+    .stepC2{animation-name:stepC2; transform-box:fill-box; transform-origin:center}
+    .stepC3{animation-name:stepC3; transform-box:fill-box; transform-origin:center}
+    .stepC4{animation-name:stepC4; transform-box:fill-box; transform-origin:center}
+
+    @keyframes trackIn { 0%,15% {opacity:0} 18% {opacity:1} 100% {opacity:1} }
+    .track { animation-name: trackIn; }
+    @keyframes lineD1 { 0%,20%   {transform:scaleX(0)} 23.5% {transform:scaleX(1)} 100% {transform:scaleX(1)} }
+    @keyframes lineD2 { 0%,27%   {transform:scaleX(0)} 30.5% {transform:scaleX(1)} 100% {transform:scaleX(1)} }
+    @keyframes lineD3 { 0%,34%   {transform:scaleX(0)} 37.5% {transform:scaleX(1)} 100% {transform:scaleX(1)} }
+    .lineD1{animation-name:lineD1; transform-box:fill-box; transform-origin:0% 50%}
+    .lineD2{animation-name:lineD2; transform-box:fill-box; transform-origin:0% 50%}
+    .lineD3{animation-name:lineD3; transform-box:fill-box; transform-origin:0% 50%}
+
+    /* budget */
+    @keyframes budLbl { 0%,40% {opacity:0} 43% {opacity:1} 100% {opacity:1} }
+    .budLbl { animation-name: budLbl; }
+    @keyframes b1 { 0%,42%   {opacity:0} 42.5% {opacity:1} 44.5% {opacity:1} 45%,100% {opacity:0} }
+    @keyframes b2 { 0%,45%   {opacity:0} 45.5% {opacity:1} 46.5% {opacity:1} 47%,100% {opacity:0} }
+    @keyframes b3 { 0%,47%   {opacity:0} 48% {opacity:1} 100% {opacity:1} }
+    .b1{animation-name:b1}.b2{animation-name:b2}.b3{animation-name:b3}
+
+    @keyframes splitTrackIn { 0%,44% {opacity:0} 47% {opacity:1} 100% {opacity:1} }
+    .splitTrack { animation-name: splitTrackIn; }
+    @keyframes segG1 { 0%,46% {transform:scaleX(0)} 50% {transform:scaleX(1)} 100% {transform:scaleX(1)} }
+    @keyframes segG2 { 0%,49% {transform:scaleX(0)} 53% {transform:scaleX(1)} 100% {transform:scaleX(1)} }
+    @keyframes segG3 { 0%,52% {transform:scaleX(0)} 56% {transform:scaleX(1)} 100% {transform:scaleX(1)} }
+    .seg1{animation-name:segG1; transform-box:fill-box; transform-origin:0% 50%}
+    .seg2{animation-name:segG2; transform-box:fill-box; transform-origin:0% 50%}
+    .seg3{animation-name:segG3; transform-box:fill-box; transform-origin:0% 50%}
+
+    @keyframes chRow1 { 0%,50% {opacity:0; transform:translateY(8px)} 54% {opacity:1; transform:translateY(0)} 100% {opacity:1} }
+    @keyframes chRow2 { 0%,52% {opacity:0; transform:translateY(8px)} 56% {opacity:1; transform:translateY(0)} 100% {opacity:1} }
+    @keyframes chRow3 { 0%,54% {opacity:0; transform:translateY(8px)} 58% {opacity:1; transform:translateY(0)} 100% {opacity:1} }
+    .chRow1{animation-name:chRow1}.chRow2{animation-name:chRow2}.chRow3{animation-name:chRow3}
+
+    @keyframes capIn { 0%,56% {opacity:0} 60% {opacity:1} 100% {opacity:1} }
+    .cap { animation-name: capIn; }
+    @keyframes roasIn { 0%,58% {opacity:0; transform:scale(0)} 60.5% {opacity:1; transform:scale(1.15)} 62% {transform:scale(1)} 100% {opacity:1; transform:scale(1)} }
+    .roas { animation-name: roasIn; transform-box: fill-box; transform-origin: center; }
+
+    /* creative card */
+    @keyframes linkIn { 0%,56% {opacity:0} 59% {opacity:0.9} 96% {opacity:0.9} 100% {opacity:0} }
+    .links { animation-name: linkIn; }
+    @keyframes dotV { 0%,58.6% {opacity:0} 60% {opacity:1} 63.6% {opacity:1} 65%,100% {opacity:0} }
+    .dot { animation-name: dotV; }
+    @keyframes creativeIn { 0%,58% {opacity:0; transform:translateX(34px)} 63.5% {opacity:1; transform:translateX(-3px)} 65.5% {transform:translateX(0)} 96% {opacity:1} 100% {opacity:0} }
+    .creative { animation-name: creativeIn; }
+    @keyframes aiPillIn { 0%,65% {opacity:0; transform:scale(0)} 67.5% {opacity:1; transform:scale(1.2)} 69% {transform:scale(1)} 100% {opacity:1; transform:scale(1)} }
+    .aiPill { animation-name: aiPillIn; transform-box: fill-box; transform-origin: center; }
+    @keyframes shimmer {
+      0%, 68% { transform: translateX(0); opacity: 0; }
+      68.5%   { opacity: 0.4; }
+      72%     { transform: translateX(170px); opacity: 0.4; }
+      72.5%,100% { transform: translateX(170px); opacity: 0; }
+    }
+    .shimmer { animation-name: shimmer; }
+
+    /* status chip + toggle */
+    @keyframes chipIn { 0%,74% {opacity:0; transform:translateY(20px)} 79% {opacity:1; transform:translateY(-2px)} 81% {transform:translateY(0)} 96% {opacity:1} 100% {opacity:0} }
+    .chip { animation-name: chipIn; }
+    @keyframes trackOff { 0%,80% {opacity:1} 82.5%,100% {opacity:0} }
+    .trackOff { animation-name: trackOff; }
+    @keyframes knobSlide {
+      0%, 80% { transform: translateX(-12px); }
+      83%     { transform: translateX(1px); }
+      84.5%   { transform: translateX(0); }
+      100%    { transform: translateX(0); }
+    }
+    .knob { animation-name: knobSlide; }
+
+    @keyframes floatY { 0%{transform:translateY(0)} 50%{transform:translateY(-4px)} 100%{transform:translateY(0)} }
+    .floatB { animation: floatY 5.4s ease-in-out infinite; animation-delay: -2.2s; }
+    .floatC { animation: floatY 5s ease-in-out infinite; animation-delay: -1.1s; }
+    @keyframes sideIn1 { 0%,14% {opacity:0; transform:scale(0)} 17% {opacity:1; transform:scale(1.1)} 19% {transform:scale(1)} 96% {opacity:1; transform:scale(1)} 100% {opacity:0; transform:scale(1)} }
+    @keyframes sideIn2 { 0%,16% {opacity:0; transform:scale(0)} 19% {opacity:1; transform:scale(1.1)} 21% {transform:scale(1)} 96% {opacity:1; transform:scale(1)} 100% {opacity:0; transform:scale(1)} }
+    .side1{animation-name:sideIn1; transform-box:fill-box; transform-origin:center}
+    .side2{animation-name:sideIn2; transform-box:fill-box; transform-origin:center}
+
+    @keyframes twinkle { 0%,100% {transform:scale(1) rotate(0deg)} 50% {transform:scale(1.18) rotate(12deg)} }
+    .sparkle { animation: twinkle 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+
+  <!-- Halo rings (transparent canvas) -->
+  <g class="a halo">
+    <circle cx="400" cy="400" r="360" fill="#FFFFFF" opacity="0.28"/>
+    <circle cx="400" cy="400" r="280" fill="#FFFFFF" opacity="0.42"/>
+    <circle cx="400" cy="400" r="200" fill="#FFFFFF" opacity="0.55"/>
+  </g>
+
+  <!-- Connector -->
+  <g class="a links" stroke="#CFC3D9" stroke-width="1.6" stroke-dasharray="1 6" stroke-linecap="round" fill="none">
+    <path d="M 540 316 C 580 326, 618 340, 646 362"/>
+  </g>
+
+  <!-- Hero card -->
+  <g class="a card">
+    <g filter="url(#shadowMd)">
+      <rect x="185" y="200" width="430" height="390" rx="20" fill="#FFFFFF"/>
+    </g>
+
+    <rect x="213" y="224" width="30" height="30" rx="9" fill="#E4EAFD"/>
+    <g stroke="#5B67D8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="223" y1="231.5" x2="223" y2="247"/>
+      <path d="M 223 232 H 234 L 230.5 235.8 L 234 239.6 H 223"/>
+    </g>
+    <text x="253" y="240" font-size="17" font-weight="600" fill="#181818">Campaign</text>
+    <text x="253" y="259" font-size="11.5" fill="#9B9B9B">AI-generated · 3 channels</text>
+    <g fill="#D8D8D4">
+      <circle cx="551" cy="239" r="2"/><circle cx="559" cy="239" r="2"/><circle cx="567" cy="239" r="2"/>
+    </g>
+
+    <!-- Stepper tracks -->
+    <g class="a track" stroke="#ECECE9" stroke-width="2" stroke-linecap="round">
+      <line x1="297" y1="298" x2="310" y2="298"/>
+      <line x1="406" y1="298" x2="419" y2="298"/>
+      <line x1="507" y1="298" x2="520" y2="298"/>
+    </g>
+    <g stroke="#9BA6FF" stroke-width="2" stroke-linecap="round">
+      <line class="a lineD1" x1="297" y1="298" x2="310" y2="298"/>
+      <line class="a lineD2" x1="406" y1="298" x2="419" y2="298"/>
+      <line class="a lineD3" x1="507" y1="298" x2="520" y2="298"/>
+    </g>
+
+    <!-- Stepper pills: neutral + completed overlays -->
+    <g class="a stepN1">
+      <rect x="213" y="286" width="84" height="24" rx="12" fill="#F2F2EF"/>
+      <text x="236" y="302" font-size="10" font-weight="600" fill="#9B9B9B">Strategy</text>
+    </g>
+    <g class="a stepC1">
+      <rect x="213" y="286" width="84" height="24" rx="12" fill="#E4EAFD"/>
+      <path d="M 224 298 L 226.6 300.6 L 231 295.6" stroke="#5B67D8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="236" y="302" font-size="10" font-weight="600" fill="#5B67D8">Strategy</text>
+    </g>
+    <g class="a stepN2">
+      <rect x="310" y="286" width="96" height="24" rx="12" fill="#F2F2EF"/>
+      <text x="333" y="302" font-size="10" font-weight="600" fill="#9B9B9B">Brainstorm</text>
+    </g>
+    <g class="a stepC2">
+      <rect x="310" y="286" width="96" height="24" rx="12" fill="#E4EAFD"/>
+      <path d="M 321 298 L 323.6 300.6 L 328 295.6" stroke="#5B67D8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="333" y="302" font-size="10" font-weight="600" fill="#5B67D8">Brainstorm</text>
+    </g>
+    <g class="a stepN3">
+      <rect x="419" y="286" width="88" height="24" rx="12" fill="#F2F2EF"/>
+      <text x="442" y="302" font-size="10" font-weight="600" fill="#9B9B9B">Creatives</text>
+    </g>
+    <g class="a stepC3">
+      <rect x="419" y="286" width="88" height="24" rx="12" fill="#E4EAFD"/>
+      <path d="M 430 298 L 432.6 300.6 L 437 295.6" stroke="#5B67D8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="442" y="302" font-size="10" font-weight="600" fill="#5B67D8">Creatives</text>
+    </g>
+    <g class="a stepN4">
+      <rect x="520" y="286" width="66" height="24" rx="12" fill="#F2F2EF"/>
+      <text x="543" y="302" font-size="10" font-weight="600" fill="#9B9B9B">Tasks</text>
+    </g>
+    <g class="a stepC4">
+      <rect x="520" y="286" width="66" height="24" rx="12" fill="#E4EAFD"/>
+      <path d="M 531 298 L 533.6 300.6 L 538 295.6" stroke="#5B67D8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <text x="543" y="302" font-size="10" font-weight="600" fill="#5B67D8">Tasks</text>
+    </g>
+
+    <!-- Budget -->
+    <g class="a budLbl"><text x="213" y="352" font-size="10" font-weight="600" letter-spacing="1" fill="#9B9B9B">BUDGET</text></g>
+    <g class="a b1" opacity="0"><text x="213" y="380" font-size="24" font-weight="700" fill="#181818">€2,900</text></g>
+    <g class="a b2" opacity="0"><text x="213" y="380" font-size="24" font-weight="700" fill="#181818">€6,120</text></g>
+    <g class="a b3"><text x="213" y="380" font-size="24" font-weight="700" fill="#181818">€8,545</text></g>
+    <g class="a roas">
+      <rect x="336" y="360" width="92" height="22" rx="11" fill="#D4F0E3"/>
+      <text x="382" y="374.5" font-size="11" font-weight="600" fill="#1E7A4F" text-anchor="middle">17.4× ROAS</text>
+    </g>
+
+    <!-- Channel split bar -->
+    <rect class="a splitTrack" x="213" y="392" width="310" height="10" rx="5" fill="#ECECE9"/>
+    <g clip-path="url(#splitClip)">
+      <rect class="a seg1" x="213" y="392" width="133" height="10" fill="#F5A623"/>
+      <rect class="a seg2" x="346" y="392" width="105" height="10" fill="#E1306C"/>
+      <rect class="a seg3" x="451" y="392" width="72" height="10" fill="#0A66C2"/>
+    </g>
+
+    <!-- Channel rows -->
+    <g class="a chRow1">
+      <use href="#icGads" x="211.5" y="412.5" width="15" height="15"/>
+      <text x="232" y="424" font-size="12.5" font-weight="600" fill="#181818">Google Ads</text>
+      <text x="430" y="424" font-size="12.5" font-weight="600" fill="#181818">€3,636</text>
+      <rect x="488" y="410" width="44" height="20" rx="10" fill="#F2F2EF"/>
+      <text x="510" y="423.5" font-size="10.5" font-weight="600" fill="#404040" text-anchor="middle">43%</text>
+    </g>
+    <g class="a chRow2">
+      <use href="#icIg" x="211.5" y="440.5" width="15" height="15"/>
+      <text x="232" y="452" font-size="12.5" font-weight="600" fill="#181818">Instagram</text>
+      <text x="430" y="452" font-size="12.5" font-weight="600" fill="#181818">€2,909</text>
+      <rect x="488" y="438" width="44" height="20" rx="10" fill="#F2F2EF"/>
+      <text x="510" y="451.5" font-size="10.5" font-weight="600" fill="#404040" text-anchor="middle">34%</text>
+    </g>
+    <g class="a chRow3">
+      <use href="#icLi" x="211.5" y="468.5" width="15" height="15"/>
+      <text x="232" y="480" font-size="12.5" font-weight="600" fill="#181818">LinkedIn</text>
+      <text x="430" y="480" font-size="12.5" font-weight="600" fill="#181818">€2,000</text>
+      <rect x="488" y="466" width="44" height="20" rx="10" fill="#F2F2EF"/>
+      <text x="510" y="479.5" font-size="10.5" font-weight="600" fill="#404040" text-anchor="middle">23%</text>
+    </g>
+
+    <g class="a cap"><text x="213" y="528" font-size="11" fill="#9B9B9B">Jul 1 → Jul 31 · Goal: Free trial signups</text></g>
+  </g>
+
+  <!-- Dot: pipeline -> creative card -->
+  <circle class="a dot" r="4.5" fill="#9BA6FF" opacity="0">
+    <animateMotion dur="10s" repeatCount="indefinite" calcMode="linear"
+      keyPoints="0;0;1;1" keyTimes="0;0.59;0.645;1"
+      path="M 540 316 C 580 326, 618 340, 646 362"/>
+  </circle>
+
+  <!-- Creative preview mini-card -->
+  <g class="a creative">
+  <g transform="translate(20 30)">
+    <g filter="url(#shadowLg)">
+      <rect x="540" y="330" width="170" height="210" rx="14" fill="#FFFFFF"/>
+    </g>
+    <circle cx="557" cy="347" r="3.5" fill="#E1306C"/>
+    <text x="565" y="350.5" font-size="9.5" font-weight="600" fill="#9B9B9B">Instagram</text>
+    <g class="a aiPill">
+      <rect x="662" y="339" width="34" height="16" rx="8" fill="#E4EAFD"/>
+      <g class="sparkle">
+        <path d="M 671 342.5 C 671.5 344.8, 673 346.3, 675.3 346.8 C 673 347.3, 671.5 348.8, 671 351.1 C 670.5 348.8, 669 347.3, 666.7 346.8 C 669 346.3, 670.5 344.8, 671 342.5 Z" fill="#5B67D8"/>
+      </g>
+      <text x="679" y="350" font-size="9" font-weight="600" fill="#5B67D8">AI</text>
+    </g>
+    <rect x="554" y="360" width="142" height="94" rx="8" fill="#F2F2EF"/>
+    <circle cx="664" cy="382" r="7" stroke="#D8D8D4" stroke-width="1.8" fill="none"/>
+    <path d="M 562 444 L 596 410 L 618 430 L 642 412 L 688 446" stroke="#D8D8D4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="554" y="474" font-size="11.5" font-weight="600" fill="#181818">Busy is not a metric</text>
+    <rect x="554" y="482" width="104" height="4.5" rx="2.25" fill="#ECECE9"/>
+    <rect x="554" y="496" width="142" height="26" rx="8" fill="#9BA6FF"/>
+    <text x="625" y="513" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">Learn More</text>
+    <g clip-path="url(#ctaClip)">
+      <rect class="a shimmer" x="524" y="496" width="26" height="26" fill="#FFFFFF" opacity="0" transform="skewX(-12)"/>
+    </g>
+  </g>
+  </g>
+
+  <!-- Floating icon badges -->
+  <g class="a side1"><g class="floatB">
+    <g filter="url(#shadowSm)"><circle cx="122" cy="340" r="26" fill="#FFFFFF"/></g>
+    <g stroke="#404040" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M 122 328 C 127.5 328, 131.5 332.3, 131.5 337.5 C 131.5 341, 129.5 343, 127.8 345 C 126.8 346.2, 126.5 347.2, 126.5 348.5 H 117.5 C 117.5 347.2, 117.2 346.2, 116.2 345 C 114.5 343, 112.5 341, 112.5 337.5 C 112.5 332.3, 116.5 328, 122 328 Z"/>
+      <line x1="118.5" y1="352" x2="125.5" y2="352"/>
+    </g>
+  </g></g>
+
+  <g class="a side2"><g class="floatC">
+    <g filter="url(#shadowSm)"><circle cx="676" cy="624" r="26" fill="#FFFFFF"/></g>
+    <g stroke="#404040" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M 666 622 L 680 615 V 633 L 666 626 Z"/>
+      <path d="M 666 622 H 663 V 626 H 666"/>
+      <path d="M 684 619 C 686 621, 686 627, 684 629"/>
+    </g>
+  </g></g>
+
+  <!-- Status chip -->
+  <g class="a chip">
+    <g filter="url(#shadowLg)">
+      <rect x="215" y="565" width="340" height="60" rx="30" fill="#FFFFFF"/>
+    </g>
+    <circle cx="247" cy="595" r="17" fill="#E4EAFD"/>
+    <g stroke="#5B67D8" stroke-width="1.6" fill="none">
+      <circle cx="247" cy="595" r="8"/>
+      <ellipse cx="247" cy="595" rx="3.6" ry="8"/>
+      <line x1="239" y1="595" x2="255" y2="595"/>
+    </g>
+    <text x="276" y="591" font-size="13" font-weight="600" fill="#181818">Campaign published</text>
+    <text x="276" y="610" font-size="11" fill="#9B9B9B">Instagram · LinkedIn · Google Ads</text>
+    <rect x="498" y="584" width="40" height="22" rx="11" fill="#3DAA74"/>
+    <rect class="a trackOff" x="498" y="584" width="40" height="22" rx="11" fill="#ECECE9" opacity="0"/>
+    <circle class="a knob" cx="528" cy="595" r="8" fill="#FFFFFF"/>
+  </g>
+</svg>

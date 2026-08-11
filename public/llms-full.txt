@@ -1,0 +1,124 @@
+# Checkgrow: AI Native Growth Marketing
+
+Checkgrow is the go-to-market engine that learns your product, buyers, market and channels. Growth shouldn't depend on who's in the room. Checkgrow keeps everything your company knows in one system: learning, improving, and working for every team. It turns knowledge into customers and recognition.
+
+Audience: CMOs, enterprise marketing teams, marketing and sales operations, growth and analytics teams, and founders. Built from 15 years of hands-on marketing: an agency before it was a platform, shaped by real problems, not theory. Works across OpenAI, Gemini, Claude and Perplexity, with no lock-ins.
+
+## The problem Checkgrow solves
+
+Every tool starts from zero. Five tools means explaining your business five times, then again for every new campaign, hire and AI prompt. Nothing carries forward. Nothing remembers what actually worked. Inside a typical stack:
+
+- AI chatbots chat with no memory of your brand or audience.
+- Ad platforms spend without strategy or audience context.
+- Content tools are off-brand by default.
+- Analytics produce data nobody reads.
+- Competitor spreadsheets are stale by Monday.
+
+## Problems Checkgrow answers, in its customers' words
+
+- Still exporting CSVs on a Sunday night? Your dashboard is four tabs; it should be one click. Your CAC is buried in a spreadsheet. You shouldn't need a data analyst to read your own funnel. Checkgrow: instant AI insights, attribution without the guesswork, and a dashboard you can give the board.
+- Launch campaigns in hours, not weeks. One brief: Meta and Google, live today. Strategy, brainstorm, creatives, deploy. From insight to live ad in the same afternoon.
+- ChatGPT doesn't know your product. Stop re-explaining your brand. Your AI should know your ICP. One context, every marketer aligned. Build growth, not prompts.
+- Priority events, set once. Every event, clear in seconds. Stop losing budget to broken tracking or paying for clicks that never convert.
+- Your growth team is three people; act like it's thirty. Marketing ops without the PM. Six tools, one tab, zero chaos. Growth marketing without the agency invoice.
+- Features ship weekly; campaigns don't. Every release becomes a campaign. Your product changed and your ads didn't: fix it.
+
+## How the system works
+
+One brain your whole go-to-market plugs into. Set up the business once: brand, products, audience, numbers. Every vertical reads from it, and every result feeds back in.
+
+The core: the Knowledge Centre. Brand, products, audience and numbers, defined once and read by every agent, campaign and report.
+
+Four verticals plug into it:
+
+- Operations (run the day-to-day): Dashboard, AI Assistant, AI Agents, Tasks. Your assistant answers from your data, agents produce the work, and tasks get owned, approved and shipped.
+- Marketing (own every channel): Campaigns, Social Media, Content, Website, Tracking. Funnel campaigns with budgets and creatives, the right social conversations, content from live trends, and a site that converts.
+- Sales (fill the pipeline): Companies, Sales, Leads. Deep account dossiers, fit-scored decision-makers and prospecting that builds your target list while you sell.
+- Research & Reporting (know and measure): Competitors, Insights. Rivals' live ads and market moves, plus GA4, Meta and Google Ads unified into answers instead of dashboards.
+
+The loop: Your business -> Create -> Reach -> Measure -> Improve. What works gets remembered.
+
+## Use cases in practice
+
+1. Explain the business once. Never again. Add your website and the engine builds a knowledge graph: Brand, ICP, Use Cases, Products, Competitors, Social Media, Tracking, Campaigns.
+2. A funnel strategy in an afternoon, not a quarter. Generate Meta and Google campaign strategies and link them with your paid channels.
+3. AI output becomes shipped work, not a dead doc. Agents produce the work; tasks get owned, approved and shipped.
+4. Numbers that explain themselves. GA4, Meta and Google Ads unified into plain-language findings, with the biggest drop-off flagged.
+5. A consultant-grade conversion audit, on demand. Scored website audits with a ranked fix per finding.
+
+## Real customer results
+
+100+ companies already tested it. Reported outcomes from named customers:
+
+- Witrina (founder & CEO Ivo Pavlović): €100k+ organic revenue.
+- Qubinets (founder Amir B.): 20k new users.
+- WESPA (CFO Milena Urban): 3x growth, 8x ROI.
+- Minka (CPO Vikram R.): 30+ enterprise SQLs.
+- Woodoz (CEO Petar Curic): 400+ paying users.
+
+Rated 4.4 (Excellent) on Trustpilot from 12 reviews: https://www.trustpilot.com/review/checkgrow.com
+
+## What it replaces
+
+Eleven subscriptions, side by side with one. The typical stack (category examples at list prices): brand wikis (Notion or Frontify, $49/mo), AI content (Jasper or Copy.ai, $99/mo), campaign ops (CoSchedule or Monday, $79/mo), social suites (Hootsuite or Sprout Social, $149/mo), competitive intel (Semrush or Similarweb, $199/mo), prospecting (Apollo.io or ZoomInfo, $199/mo), conversion tooling (Hotjar, VWO or a CRO agency, $129/mo), analytics (Databox or Mixpanel, $99/mo), consent tracking (Cookiebot or OneTrust, $99/mo), work tracking (Asana or ClickUp, $59/mo), creative direction (Canva or Figma, $39/mo). Full stack: about $1,199/month, before seats and overages.
+
+Checkgrow: one platform, one source of truth, one bill. €79/month, with a free start via the waitlist.
+
+## Integrations
+
+Channels and measurement: Google Analytics 4, Google Ads, Meta Ads, Instagram, LinkedIn. Automation: n8n. AI models: OpenAI, Google Gemini, Anthropic Claude, Perplexity. You choose the model per job, keep costs visible, and are never locked in.
+
+## Who it's for
+
+- Founders & CMOs: set direction once; the system carries it into every campaign and channel.
+- Marketing & sales ops: execute at real speed with agents that already know the business.
+- Growth & analytics: close the loop; every result feeds the next decision.
+
+## Pricing
+
+€79/month at launch. Joining the waitlist is free, guarantees free access at launch, and requires no payment details. Your data stays yours.
+
+## FAQ
+
+Q: What is Checkgrow?
+A: Checkgrow is a go-to-market engine for marketing teams, founders and enterprises. It connects your company knowledge, market research, day-to-day execution and measurement in one system, so every team works from the same context and every campaign starts from what the business already knows.
+
+Q: Who is Checkgrow for?
+A: Founders and CMOs who set direction, marketing and sales operations teams who execute, and growth and analytics people who close the loop. It fits companies from scale-ups to enterprise marketing teams that are tired of re-explaining the business to every tool, agency and AI prompt.
+
+Q: What can I actually do with Checkgrow?
+A: Onboard your brand from your website, then run real work: build a funnel strategy in an afternoon, generate Meta and Google campaign strategies linked to your paid channels, turn AI output into owned and approved tasks, read GA4, Meta and Google Ads as plain-language insights, track competitors' live ads, and run consultant-grade conversion audits of your website on demand.
+
+Q: How is Checkgrow different from ChatGPT or a generic AI tool?
+A: A generic chat starts from zero every time and forgets what worked. Checkgrow keeps a persistent knowledge base of your brand, products, audience and numbers that every agent, campaign and report reads from, and every result feeds back in. The difference is memory and connected execution, not better prompts.
+
+Q: Which tools does Checkgrow replace?
+A: The typical growth stack it covers spans eleven subscriptions: brand wikis, AI content tools, campaign ops boards, social suites, competitive intelligence, prospecting databases, CRO tooling, analytics dashboards, consent tracking, work tracking and creative direction. That stack commonly runs around $1,199 per month across tools; Checkgrow is one platform at €79 per month.
+
+Q: Which platforms does Checkgrow connect to?
+A: Google Analytics 4, Google Ads, Meta Ads, Instagram and LinkedIn for channels and measurement, with automation via n8n. Model-side it works across OpenAI, Google Gemini, Anthropic Claude and Perplexity.
+
+Q: Which AI models does Checkgrow use?
+A: Checkgrow works across multiple frontier models, including OpenAI, Google Gemini, Perplexity and Anthropic Claude. You choose the model per job, keep costs visible, and are never locked in.
+
+Q: Who owns the data and knowledge I put in?
+A: You do. Your knowledge base, research and results stay yours: no lock-ins and no hidden rules. Companies should understand how things work and own their data; that is a founding principle, not a feature.
+
+Q: How fast can I launch campaigns with Checkgrow?
+A: In hours, not weeks. One brief becomes Meta and Google campaign strategies, brainstorms, creatives and deployment, all linked to your paid channels, and the funnel is readable the same day: from insight to live ad in the same afternoon.
+
+Q: Can a small team or a team without an agency use Checkgrow?
+A: Yes, that is the point. A growth team of three can operate like thirty: AI agents produce the work around the clock, marketing ops run without a dedicated project manager, reporting is board-ready without a data analyst, and there is no agency invoice.
+
+Q: How much does Checkgrow cost?
+A: €79 per month at launch, replacing a stack that typically costs around $1,199 per month. Joining the waitlist is free, guarantees free access at launch, and requires no payment details.
+
+Q: What do I get by joining the waitlist?
+A: Early access to the platform as we open new workspaces, plus a short onboarding session with our team to set up your knowledge base. No payment details are required to join.
+
+## Contact
+
+- Website: https://checkgrow.com
+- Join the waitlist: https://checkgrow.com/#waitlist
+- Book a demo: https://calendar.app.google/N1nipDezRb98Ufza6
+- Email: bruno@checkgrow.com

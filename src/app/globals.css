@@ -1,26 +1,335 @@
 @import "tailwindcss";
 
+/* ==========================================================
+   Checkgrow design tokens — mapped 1:1 from the Brand Pack
+   (Projects/brand/checkgrow, v0.5.4). Do not invent values.
+   ========================================================== */
+
+@theme {
+  /* Primitive palette */
+  --color-cream: #f7f7f5; /* background */
+  --color-cream-2: #f2f2ef; /* background-secondary */
+  --color-cream-3: #ecece9; /* background-tertiary */
+  --color-ink: #181818; /* dark */
+  --color-ink-soft: #404040; /* dark-grey */
+  --color-ink-raised: #242424; /* elevated dark surface */
+  --color-accent: #9ba6ff; /* accent-purple */
+  --color-tint: #e4eafd; /* light-blue-purple */
+  --color-lavender: #cfc3d9; /* light-purple */
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Shadows */
+  --shadow-soft: 0 12px 40px rgba(24, 24, 24, 0.08);
+  --shadow-raised: 0 24px 72px rgba(24, 24, 24, 0.12);
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-enter: cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --grid-max: 1200px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Brand type scale (pack: display/h1/h2/body/small/label) */
+.text-display {
+  font-size: clamp(2.6rem, 6.4vw, 4.5rem);
+  line-height: 0.94;
+  font-weight: 600;
+  letter-spacing: -0.055em;
+}
+.text-h1 {
+  font-size: clamp(2.25rem, 4.8vw, 3.5rem);
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
+.text-h2 {
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+.text-label {
+  font-size: 0.75rem;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.wrap {
+  max-width: var(--grid-max);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* Signature motif: the Checkgrow dot */
+.dot-marker {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 999px;
+  background: var(--color-accent);
+  flex: 0 0 auto;
+}
+
+/* Flow strip: ONE light travels behind the whole row of chips; as it
+   passes under a chip, that chip's dot blinks purple. Orb and dots share
+   the same 5.6s linear timeline, synced via per-dot animation delays. */
+.flow-orb {
+  position: absolute;
+  top: 50%;
+  margin-top: -3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #9ba6ff;
+  box-shadow:
+    0 0 5px 1.5px rgba(155, 166, 255, 0.85),
+    0 0 12px 4px rgba(155, 166, 255, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  /* stacking: track (z-0) < light (z-5) < chips (z-10): the light rides
+     on top of the line and slips underneath each bullet */
+  z-index: 5;
+}
+@keyframes flow-orb-x {
+  0% { left: -12px; opacity: 0; }
+  4% { opacity: 1; }
+  88% { left: calc(100% + 4px); opacity: 1; }
+  92%, 100% { left: calc(100% + 4px); opacity: 0; }
+}
+.orb-x { animation: flow-orb-x 5.6s linear infinite; }
+
+/* Mobile: the same light, split across two rows: it crosses row one,
+   fades, and re-emerges at the start of row two. */
+@keyframes flow-orb-m1 {
+  0% { left: -10px; opacity: 0; }
+  4% { opacity: 1; }
+  38% { left: calc(100% + 2px); opacity: 1; }
+  42%, 100% { left: calc(100% + 2px); opacity: 0; }
+}
+@keyframes flow-orb-m2 {
+  0%, 50% { left: -10px; opacity: 0; }
+  54% { opacity: 1; }
+  92% { left: calc(100% + 2px); opacity: 1; }
+  96%, 100% { left: calc(100% + 2px); opacity: 0; }
+}
+.orb-m1 { animation: flow-orb-m1 5.6s linear infinite; }
+.orb-m2 { animation: flow-orb-m2 5.6s linear infinite; }
+
+/* Chip dots: at rest they keep their own colour; the blink scales them
+   up and flashes accent purple with a glow as the light passes. */
+@keyframes flow-dot-blink {
+  0%, 14%, 100% { transform: scale(1); }
+  5% {
+    transform: scale(1.85);
+    background-color: #9ba6ff;
+    box-shadow: 0 0 12px 3px rgba(155, 166, 255, 0.85);
+  }
+}
+.flow-dot { animation: flow-dot-blink 5.6s linear infinite; }
+
+/* CheckLoader (BrandLoader port): staggered wave that periodically
+   settles into the check and dissolves back. */
+@keyframes ck-blink {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.85; }
+}
+.ck-dot { animation: ck-blink 1.8s ease-in-out infinite; }
+@keyframes ck-wave-vis {
+  0%, 62% { opacity: 1; }
+  68%, 84% { opacity: 0; }
+  90%, 100% { opacity: 1; }
+}
+@keyframes ck-chk-vis {
+  0%, 62% { opacity: 0; }
+  68%, 84% { opacity: 1; }
+  90%, 100% { opacity: 0; }
+}
+.ck-wave { animation: ck-wave-vis 4.3s linear infinite; }
+.ck-chk { opacity: 0; animation: ck-chk-vis 4.3s linear infinite; }
+
+/* travelling gradient stroke for the hero knowledge bullets */
+@property --ck-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.bullet-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--ck-angle),
+    rgba(99, 115, 255, 0) 0%,
+    rgba(99, 115, 255, 0.95) 16%,
+    rgba(99, 115, 255, 0.25) 30%,
+    rgba(99, 115, 255, 0) 42%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: ck-ring-spin 3.4s linear infinite;
+  animation-delay: var(--ring-delay, 0s);
+  pointer-events: none;
+}
+@keyframes ck-ring-spin {
+  to {
+    --ck-angle: 360deg;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* same travelling stroke for rectangular cards (radius follows the card) */
+.card-ring {
+  position: relative;
+}
+.card-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--ck-angle),
+    rgba(99, 115, 255, 0) 0%,
+    rgba(99, 115, 255, 0.9) 16%,
+    rgba(99, 115, 255, 0.22) 30%,
+    rgba(99, 115, 255, 0) 42%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: ck-ring-spin 3.4s linear infinite;
+  animation-delay: var(--ring-delay, 0s);
+  pointer-events: none;
+}
+
+/* satellite words around the vertical keywords: vertical offsets are
+   multiplied up on small screens so they spread away from the word */
+:root {
+  --satk: 1.9;
+}
+@media (min-width: 640px) {
+  :root {
+    --satk: 1;
+  }
+}
+
+/* client logo marquee: two copies of the row slide by one row-width */
+.logo-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #fff 12%, #fff 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #fff 12%, #fff 88%, transparent);
+}
+.logo-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: logo-marquee-slide 36s linear infinite;
+}
+.logo-marquee:hover .logo-marquee-track {
+  animation-play-state: paused;
+}
+@keyframes logo-marquee-slide {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* soft purple glow beneath each product mockup, pulling the eye to it.
+   isolation keeps the negative-z pseudo inside this box instead of
+   slipping behind the section background; the offsets sit the ellipse
+   under the drawn card, inside the SVG's padded canvas. */
+.mockup-glow {
+  position: relative;
+  isolation: isolate;
+}
+.mockup-glow::after {
+  content: "";
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: 2%;
+  height: 44%;
+  border-radius: 9999px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(99, 115, 255, 0.75) 0%,
+    rgba(164, 146, 225, 0.5) 45%,
+    rgba(99, 115, 255, 0) 74%
+  );
+  filter: blur(36px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* waitlist section arrival: children stagger in on first view and on
+   every #waitlist CTA landing (class replayed from FinalCta) */
+.cta-box > * {
+  opacity: 0;
+}
+.cta-arrive > * {
+  animation: cta-in 0.55s cubic-bezier(0, 0, 0.2, 1) both;
+}
+.cta-arrive > *:nth-child(2) {
+  animation-delay: 0.09s;
+}
+.cta-arrive > *:nth-child(3) {
+  animation-delay: 0.18s;
+}
+.cta-arrive > *:nth-child(4) {
+  animation-delay: 0.27s;
+}
+@keyframes cta-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
