@@ -119,7 +119,7 @@ export const faqItems = [
   },
   {
     q: "Which tools does Checkgrow replace?",
-    a: "The typical growth stack it covers spans eleven subscriptions: brand wikis, AI content tools, campaign ops boards, social suites, competitive intelligence, prospecting databases, CRO tooling, analytics dashboards, consent tracking, work tracking and creative direction. That stack commonly runs around $1,199 per month across tools; Checkgrow is one platform at €79 per month.",
+    a: "The typical growth stack it covers spans eleven subscriptions: brand wikis, AI content tools, campaign ops boards, social suites, competitive intelligence, prospecting databases, CRO tooling, analytics dashboards, consent tracking, work tracking and creative direction. That stack commonly runs around €1,199 per month across tools; Checkgrow is one platform at €79 per month.",
   },
   {
     q: "Which platforms does Checkgrow connect to?",
@@ -143,7 +143,7 @@ export const faqItems = [
   },
   {
     q: "How much does Checkgrow cost?",
-    a: "€79 per month at launch, replacing a stack that typically costs around $1,199 per month. Joining the waitlist is free, guarantees free access at launch, and requires no payment details.",
+    a: "€79 per month at launch, replacing a stack that typically costs around €1,199 per month. Joining the waitlist is free, guarantees free access at launch, and requires no payment details.",
   },
   {
     q: "What do I get by joining the waitlist?",
