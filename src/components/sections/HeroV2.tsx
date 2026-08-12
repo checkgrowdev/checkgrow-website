@@ -939,11 +939,6 @@ export function HeroV2() {
                 The go-to-market engine that learns your{" "}
                 <span className="relative whitespace-nowrap">
                   <RotatingWord />
-                  <span
-                    aria-hidden
-                    className="absolute inset-x-0 bottom-1 -z-10 h-3 rounded-sm"
-                    style={{ backgroundColor: "rgba(99, 115, 255, 0.4)" }}
-                  />
                 </span>
                 .
               </h1>
