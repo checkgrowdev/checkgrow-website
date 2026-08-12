@@ -296,12 +296,14 @@ export function WaitlistForm({
         ) : (
           <p className={ink ? "text-tint/80" : "text-ink-soft"}>
             Join now and guarantee{" "}
-            <mark
-              className="rounded-sm px-1 font-medium text-white"
-              style={{ backgroundColor: "#6373FF" }}
-            >
-              Free access
-            </mark>{" "}
+            <a href="#waitlist" className="inline-block">
+              <mark
+                className="cursor-pointer rounded-sm px-1 font-medium text-white transition-opacity duration-200 hover:opacity-85"
+                style={{ backgroundColor: "#6373FF" }}
+              >
+                Free access
+              </mark>
+            </a>{" "}
             · No payment details · Your data stays yours
           </p>
         )}
