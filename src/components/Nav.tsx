@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { useStableVh } from "@/lib/useStableVh";
 
 const links = [
   { href: "#platform", label: "Platform" },
@@ -17,6 +18,7 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const progressRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const { vhRef: stableVhRef } = useStableVh();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 72);
@@ -33,7 +35,8 @@ export function Nav() {
     let raf = 0;
     const frame = () => {
       raf = requestAnimationFrame(frame);
-      const probe = window.scrollY + window.innerHeight * 0.5;
+      const probe =
+        window.scrollY + (stableVhRef.current || window.innerHeight) * 0.5;
       for (let i = 0; i < links.length; i++) {
         const el = progressRefs.current[i];
         const sec = document.getElementById(ids[i]);
@@ -47,7 +50,7 @@ export function Nav() {
     };
     raf = requestAnimationFrame(frame);
     return () => cancelAnimationFrame(raf);
-  }, []);
+  }, [stableVhRef]);
 
   /* scrolled: the bar compresses into a floating glassy pill; back at the
      top it relaxes into the plain full-width header. The mobile dropdown

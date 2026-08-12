@@ -8,6 +8,7 @@
    never sees it. */
 
 import { useEffect, useRef, useState } from "react";
+import { useStableVh } from "@/lib/useStableVh";
 
 const SECTIONS: Array<{ id: string; label: string }> = [
   { id: "platform", label: "Platform" },
@@ -23,32 +24,52 @@ export function MobileScrollRail() {
   const railRef = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
   const [active, setActive] = useState(false);
+  const [shown, setShown] = useState(false);
   const dragging = useRef(false);
   const moved = useRef(false);
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { vhRef: stableVhRef } = useStableVh();
 
   useEffect(() => {
     let raf = 0;
     const track = () => {
       raf = requestAnimationFrame(track);
-      const probe = window.scrollY + window.innerHeight * 0.35;
+      const vh = stableVhRef.current || window.innerHeight;
+      const probe = window.scrollY + vh * 0.35;
       let idx = 0;
       for (let i = 0; i < SECTIONS.length; i++) {
         const el = document.getElementById(SECTIONS[i].id);
         if (el && el.offsetTop <= probe) idx = i;
       }
       setCurrent((c) => (c === idx ? c : idx));
+
+      /* the rail only surfaces once the hero story reaches step one (the
+         "yourwebsite.com" scene, ~21% of the pin); before that it would
+         compete with the hero for attention */
+      const hero = document.getElementById("platform");
+      let show = false;
+      if (hero) {
+        const r = hero.getBoundingClientRect();
+        const span = r.height - vh;
+        show =
+          span > vh
+            ? -r.top / span >= 0.21
+            : window.scrollY > r.height * 0.6; /* reduced-motion hero */
+      }
+      setShown((s) => (s === show ? s : show));
     };
     raf = requestAnimationFrame(track);
     return () => cancelAnimationFrame(raf);
-  }, []);
+  }, [stableVhRef]);
 
   const scrubTo = (clientY: number) => {
     const rail = railRef.current;
     if (!rail) return;
     const r = rail.getBoundingClientRect();
     const frac = Math.min(1, Math.max(0, (clientY - r.top) / r.height));
-    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const max =
+      document.documentElement.scrollHeight -
+      (stableVhRef.current || window.innerHeight);
     window.scrollTo(0, frac * max);
   };
 
@@ -64,7 +85,9 @@ export function MobileScrollRail() {
   return (
     <div
       ref={railRef}
-      className="fixed left-0 top-1/2 z-40 flex -translate-y-1/2 touch-none flex-col items-start gap-3 py-2 pr-6 lg:hidden"
+      className={`fixed left-0 top-1/2 z-40 flex -translate-y-1/2 touch-none flex-col items-start gap-3 py-2 pr-6 transition-opacity duration-300 lg:hidden ${
+        shown ? "opacity-100" : "pointer-events-none opacity-0"
+      }`}
       onPointerDown={(e) => {
         dragging.current = true;
         moved.current = false;

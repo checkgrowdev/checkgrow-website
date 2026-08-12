@@ -1,0 +1,39 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+/* Viewport height that ignores mobile browser-chrome churn. Phones and
+   in-app browsers (Instagram, Safari with its toolbar) fire resize events
+   with small height deltas while the user scrolls; anything sized or
+   scrubbed off the live innerHeight then shifts mid-scroll and the page
+   visibly jumps. This value updates only on real changes: a width change
+   (rotation, desktop resize) or a height move larger than 150px. */
+export function useStableVh() {
+  const [vh, setVh] = useState(0);
+  const vhRef = useRef(0);
+
+  useEffect(() => {
+    let w = window.innerWidth;
+    const apply = () => {
+      vhRef.current = window.innerHeight;
+      setVh(window.innerHeight);
+    };
+    apply();
+    const onResize = () => {
+      const nw = window.innerWidth;
+      const nh = window.innerHeight;
+      if (nw !== w || Math.abs(nh - vhRef.current) > 150) {
+        w = nw;
+        apply();
+      }
+    };
+    window.addEventListener("resize", onResize);
+    window.addEventListener("orientationchange", onResize);
+    return () => {
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("orientationchange", onResize);
+    };
+  }, []);
+
+  return { vh, vhRef };
+}

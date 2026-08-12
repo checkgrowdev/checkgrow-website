@@ -12,6 +12,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { passProgress } from "@/lib/scrollProgress";
+import { useStableVh } from "@/lib/useStableVh";
 
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 const smooth = (v: number) => v * v * (3 - 2 * v);
@@ -40,6 +41,7 @@ export function PlatformFilm() {
   const soundRef = useRef(true);
   const [chapter, setChapter] = useState(0);
   const lastChapter = useRef(0);
+  const { vhRef: stableVhRef } = useStableVh();
 
   useEffect(() => {
     soundRef.current = sound;
@@ -91,7 +93,7 @@ export function PlatformFilm() {
     let raf = 0;
     const frame = () => {
       raf = requestAnimationFrame(frame);
-      const p = sec ? passProgress(sec) : 0;
+      const p = sec ? passProgress(sec, stableVhRef.current) : 0;
 
       if (cardRef.current) {
         const e = prefersReduced ? 1 : ramp(p, 0.03, 0.32);
@@ -162,7 +164,7 @@ export function PlatformFilm() {
       window.removeEventListener("pointerdown", onActivate);
       window.removeEventListener("keydown", onActivate);
     };
-  }, []);
+  }, [stableVhRef]);
 
   return (
     <section

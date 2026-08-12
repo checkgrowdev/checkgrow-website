@@ -22,6 +22,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Image from "next/image";
 import { pinProgress } from "@/lib/scrollProgress";
+import { useStableVh } from "@/lib/useStableVh";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { Trustpilot } from "@/components/Trustpilot";
 import { RotatingWord } from "@/components/RotatingWord";
@@ -445,6 +446,7 @@ export function HeroV2() {
   const pointerType = useRef("mouse");
   const [reduced, setReduced] = useState(false);
   const [tipIndex, setTipIndex] = useState(-1);
+  const { vh: stableVh, vhRef: stableVhRef } = useStableVh();
 
   const setTip = (i: number) => {
     tipState.current.i = i;
@@ -517,8 +519,12 @@ export function HeroV2() {
     });
 
     const resize = () => {
-      w = window.innerWidth;
-      h = window.innerHeight;
+      const nw = window.innerWidth;
+      /* stable height: browser-chrome show/hide must not re-anchor the scene */
+      const nh = stableVhRef.current || window.innerHeight;
+      if (nw === w && nh === h) return;
+      w = nw;
+      h = nh;
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       canvas.style.width = `${w}px`;
@@ -562,7 +568,7 @@ export function HeroV2() {
       raf = requestAnimationFrame(frame);
       if (!running) return;
       const t = performance.now() / 1000;
-      const p = pinProgress(wrap);
+      const p = pinProgress(wrap, h);
 
       /* ease the cursor towards its smoothed position */
       const hasPtr = mouse.x > -999;
@@ -850,7 +856,7 @@ export function HeroV2() {
         const bell = Math.sin(Math.PI * wp);
         el.style.opacity = String(bell);
         /* eased lift so the word breathes upward instead of tracking scroll linearly */
-        el.style.transform = `translateY(-50%) translateY(${(1 - smooth(wp) * 2) * 40}vh) scale(${0.96 + 0.06 * bell})`;
+        el.style.transform = `translateY(-50%) translateY(${(1 - smooth(wp) * 2) * h * 0.4}px) scale(${0.96 + 0.06 * bell})`;
         const big = bigRefs.current[i];
         if (big) {
           const full = VERTICALS[i].big;
@@ -875,7 +881,7 @@ export function HeroV2() {
              instead of travelling as one block */
           const spd = (rand01(i * 53.7 + j * 19.3 + 5) - 0.5) * 30;
           const sx = (rand01(i * 71.3 + j * 23.9 + 7) - 0.5) * 70;
-          sat.style.transform = `translateY(${(1 - wp * 2) * spd}vh) translate(${(wp - 0.5) * sx}px, ${Math.sin(t * 1.1 + j * 2.1 + i) * 4}px)`;
+          sat.style.transform = `translateY(${((1 - wp * 2) * spd * h) / 100}px) translate(${(wp - 0.5) * sx}px, ${Math.sin(t * 1.1 + j * 2.1 + i) * 4}px)`;
         });
       });
 
@@ -910,17 +916,28 @@ export function HeroV2() {
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerleave", onLeave);
     };
-  }, []);
+  }, [stableVhRef]);
 
   return (
     <section
       ref={wrapRef}
       id="platform"
       className="relative"
-      style={{ height: reduced ? "100vh" : "620vh", minHeight: reduced ? 640 : undefined }}
+      style={{
+        /* pixel-pinned: vh units re-evaluate when mobile browser chrome
+           collapses, resizing the whole 620vh story mid-scroll and jolting
+           everything below it */
+        height: reduced
+          ? "100vh"
+          : stableVh
+            ? `${Math.round(stableVh * 6.2)}px`
+            : "620vh",
+        minHeight: reduced ? 640 : undefined,
+      }}
     >
       <div
         className="sticky top-0 h-screen overflow-hidden"
+        style={stableVh ? { height: `${stableVh}px` } : undefined}
         onClick={() => {
           if (pointerType.current !== "mouse" && tipState.current.i >= 0) setTip(-1);
         }}
