@@ -989,11 +989,7 @@ export function HeroV2() {
             {/* Scene 2a · onboarding prompt in the centre of the circle */}
             <div ref={l2Ref} className="pointer-events-none absolute inset-0" style={{ opacity: 0 }}>
               <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
-                <p className="text-label flex items-center gap-2.5 text-ink-soft">
-                  <span className="dot-marker" aria-hidden />
-                  Step one
-                </p>
-                <h2 className="text-h1 mt-4 text-balance">
+                <h2 className="text-h1 text-balance">
                   Start onboarding your brand.
                 </h2>
                 <div className="mt-6 flex min-h-12 w-full max-w-xs items-center rounded-full bg-white px-5 shadow-soft ring-1 ring-cream-3 sm:max-w-sm">

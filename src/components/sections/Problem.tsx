@@ -248,10 +248,21 @@ export function Problem() {
                           key={b}
                           className="flex items-start gap-2.5 text-xs leading-relaxed text-ink-soft"
                         >
-                          <span
-                            className="mt-[5px] size-1.5 shrink-0 rounded-full bg-accent"
+                          <svg
+                            width="9"
+                            height="9"
+                            viewBox="0 0 9 9"
                             aria-hidden
-                          />
+                            className="mt-[4px] shrink-0 text-accent"
+                          >
+                            <path
+                              d="M1 1 L8 8 M8 1 L1 8"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                            />
+                          </svg>
                           {b}
                         </li>
                       ))}

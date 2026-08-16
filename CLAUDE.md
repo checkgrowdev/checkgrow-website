@@ -9,3 +9,10 @@ Checkgrow marketing website (waitlist launch page). Built and maintained under `
 - **Stack:** Next.js App Router + TypeScript + Tailwind v4 + motion (motion.dev), pnpm.
 - **Primary conversion:** Join the waitlist (form posts to `/api/waitlist`, stored in `.data/waitlist.jsonl` locally — swap for a real store before production).
 - **Mockups:** `public/mockups/*.svg` are self-contained animated SVGs sourced from `Projects/checkgrow-website/mockups/` — edit them there, then re-copy.
+
+## Shipping
+
+- `project.json` and `docs/deploy.md` are the canonical deployment configuration and runbook.
+- This website intentionally ships the **entire approved local working tree directly to `main`**. A push to `main` triggers the Easy Panel production deployment.
+- Before staging, committing or pushing, print the complete `git add -A` manifest and wait for explicit approval.
+- This repository has no Supabase deployment. The Next.js waitlist route and its external webhook integration ship with the website code.

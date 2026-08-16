@@ -1,0 +1,53 @@
+{
+  "$schema": "../../../.ai/reference/project-template.json",
+  "id": "checkgrow-site",
+  "name": "Checkgrow Website",
+  "phase": "production",
+  "version": "0.1.0",
+  "description": "The public Checkgrow marketing and waitlist website served at checkgrow.com.",
+  "stack": {
+    "frontend": ["Next.js 16 App Router", "React 19", "TypeScript", "Tailwind CSS v4", "motion"],
+    "backend": ["Next.js route handler for waitlist intake", "external Checkgrow waitlist webhook"],
+    "ai": [],
+    "packageManager": "pnpm",
+    "deployTarget": "Easy Panel Docker service for checkgrow.com"
+  },
+  "sourceOfTruth": {
+    "standingRules": "CLAUDE.md",
+    "entrypoint": "AGENTS.md",
+    "deploy": "docs/deploy.md",
+    "decisions": "../../../Knowledge Projects/Projects/website-developer/checkgrow-site/Decisions Log.md",
+    "brand": "../../brand/checkgrow"
+  },
+  "repository": {
+    "url": "https://github.com/checkgrowdev/checkgrow-website.git",
+    "sshUrl": "git@github.com:checkgrowdev/checkgrow-website.git",
+    "remote": "origin",
+    "defaultBranch": "main",
+    "shipBranch": "main",
+    "releaseFlow": "push the complete approved working tree directly to main; main triggers the Easy Panel production deployment"
+  },
+  "supabase": {
+    "enabled": false,
+    "projectId": null,
+    "notes": "This website repository has no Supabase schema, migrations or edge functions. The waitlist route forwards to an existing external Checkgrow webhook configured through WAITLIST_WEBHOOK_URL."
+  },
+  "deploy": {
+    "runner": ">>ship",
+    "doc": "docs/deploy.md",
+    "productionBranch": "main",
+    "directToProduction": true,
+    "releasePr": false,
+    "requiresApproval": true,
+    "invariant": "After the complete manifest is approved, git add -A ships the entire local website working tree directly to main. No local website change is intentionally left behind."
+  },
+  "cascades": [
+    "A push to main triggers the Easy Panel production deployment for checkgrow.com.",
+    "Changes to the waitlist route must preserve explicit webhook failure handling and require WAITLIST_WEBHOOK_URL in production.",
+    "Brand identity changes remain bound to the Checkgrow Brand Pack and the site Decisions Log."
+  ],
+  "knownGaps": {
+    "tooling": "Docker is not installed locally. Easy Panel builds the committed Dockerfile remotely. The configured origin uses authenticated HTTPS; the equivalent SSH URL is recorded for repository identity.",
+    "backend": "There is no deployable Supabase backend in this repository, so Supabase preflight and deployment steps are not applicable."
+  }
+}

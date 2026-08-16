@@ -64,12 +64,12 @@ export function FinalCta() {
       <div className="wrap">
         <div ref={boxRef} className="cta-box flex flex-col items-center text-center">
           <Image
-            src="/brand/logos/symbol-rounded-8-inverse.svg"
+            src="/brand/logos/symbol-transparent-light.svg"
             alt=""
             aria-hidden
             width={56}
             height={56}
-            className="mx-auto rounded-md"
+            className="mx-auto"
           />
           <h2 className="text-h1 mx-auto mt-8 max-w-2xl text-balance">
             Products are easy to build now. Checkgrow makes them easier to

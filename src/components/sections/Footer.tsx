@@ -51,6 +51,14 @@ export function Footer() {
             >
               Documentation
             </a>
+            <a
+              href="https://doc.checkgrow.com/changelog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors duration-200 hover:text-cream"
+            >
+              Changelog
+            </a>
           </nav>
         </div>
         <div className="mt-10 flex flex-col justify-between gap-6 text-xs text-tint/60 sm:flex-row sm:items-end">
